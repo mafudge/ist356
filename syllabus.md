@@ -118,18 +118,18 @@ ROUGH DRAFT: ORDER OF TOPICS MAY CHANGE AND I WILL KNOW MORE WHEN I BUILD OUT LA
 
 | Week | Topic | Reading | Assignment |
 |------|-------|---------|------------|
-| 1 | Programming in Python | TODO | Lab 1 |
+| 1 | Programming in Python | McKinney Ch,1,2,3 | Lab 1 |
 | 2 | Pip, Modules, Ipython interact | TODO | Lab 2 |
 | 3 | HTTP, REST, API's| TODO | Lab 3 |
 | 4 | More API's, OAUTH2 |TODO | Lab 4 |
-| 5 | Pandas and Numpy basics series, and indexes| TODO | Lab 5 |
-| 6 | Pandas: joins, append, aggregations,  |TODO | Lab 6 |
-| 7 | Pandas: timeseries, date handling, lambdas  |TODO | Lab 7 |
-| 8 | Web Scraping: HTML, and Beautiful Soup |TODO | Lab 8 |
-| 9 | Web Scraping: Javascript and Form submission |TODO | Lab 9 |
+| 5 | Pandas and Numpy basics series, and indexes| McKinney 4,5,6 | Lab 5 |
+| 6 | Pandas: joins, append, Combine, lambdas | McKinney 7,8,9  | Lab 6 |
+| 7 | Pandas: timeseries, aggregation, date handling  | McKinney 10,11| Lab 7 |
+| 8 | Web Scraping: HTML, and Beautiful Soup | Mitchell 1,2,3 | Lab 8 |
+| 9 | Web Scraping: Javascript and Form submission | Mitchell 4,10,11 | Lab 9 |
 | 10 | Web Driving with Selenium  |TODO | Lab 10 |
-| 11 | Plotting and Mapping |TODO | Lab 11 |
-| 12 | Production: Logging, Deploying cloud; preparing code for production. | TODO | Lab 10 |
+| 11 | Plotting and Mapping | TODO | Lab 11 |
+| 12 | Production: Logging, Deploying cloud; preparing code for production. | Kretz | Lab 10 |
 | 13 | Cloud and Object Storage  |TODO | Lab 10 |
 | 14 | Placeholder for another topic  |TODO | Lab 10 |
 
