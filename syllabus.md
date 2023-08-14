@@ -62,7 +62,7 @@ This course is bring your own device. You will need a Windows, Mac, or Chromeboo
 
 ### Attendance and Participation
 
-You are expected to attend and participate in every class session. If you must miss class, you are responsible for making up the work and catching up on what you missed. Do expect a pre-recorded lecture or instructor support if you miss class. A suggestion is to partnetr with a classmate to share notes from class.
+You are expected to attend and participate in every class session. If you must miss class, you are responsible for making up the work and catching up on what you missed. Do expect a pre-recorded lecture or instructor support if you miss class. A suggestion is to partner with a classmate to share notes from class.
 
 ### Assignments
 
@@ -89,10 +89,10 @@ In your final project you will be expected to create a data pipeline of your cho
 
 | Assessment | Type | Learning Outcomes | Quantity | Points Each | Points Total |
 |------------|------|-------------------|----------|-------------|--------------|
-| Lab Assignments | Formative | 1, 2 | 10 | 10 | 100 |
-| Exams | Summative | 3, 4 | 2 | 100 | 200 |
-| Project | Summative | 5 | 1 | 100 | 100 |
-| **Total** | | | | | **500** |
+| Lab Assignments | Formative | 1, 2 | 10 | 2 | 30 |
+| Exams | Summative | 3, 4 | 2 | 20 | 40 |
+| Project | Summative | 5 | 1 | 30 | 30 |
+| **Total** | | | | | **100** |
 
 ### Grading Table
 
