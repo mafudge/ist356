@@ -6,7 +6,8 @@ The exploration of common approaches for building data pipelines used in analyti
 ### Additional Course Description
 
 This course is a tour of programming techniques for building data pipelines for analytics. It will not just emphasize exploratory approaches, but also techniques to build extract transform load pipelines to run code in production. 
-Throughout the course we will learn how to source data from a variety of sources (files, data streams, APIs, web scraping, etc.) and ultimately transform data as to prepare it for dashboards or machine learning. 
+Throughout the course we will learn how to source data from a variety of sources (files, data streams, APIs, web scraping, etc.) and ultimately transform data as to prepare it for dashboards or machine learning. You will also learn 
+some simple data visualization but that is not the primary emphasis of the course. 
 
 ### Prerequisites
 
@@ -47,6 +48,73 @@ Upon completion of this course, students will be able to:
 ## Textbooks And Supplies
 
 ### Textbooks
+
+There are no textbooks for this course.  All required readings are available freely online. The online sources are the most up-to-date references to the relevant course material. 
+
+#### Python 
+
+- PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
+- The Python Language Reference. (2022). Python Documentation.  [https://docs.python.org/3.11/reference/index.html](https://docs.python.org/3.11/reference/index.html)
+- The Python Standard Library. (2022.). Python Documentation. [https://docs.python.org/3.11/library/index.html](https://docs.python.org/3.11/library/index.html)
+
+#### User Interface
+
+- Widget List — Jupyter Widgets 8.1.0 documentation. (2022). Readthedocs.io. [https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html)
+- Using Interact — Jupyter Widgets 8.1.0 documentation. (2017). Readthedocs.io. [https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact](https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact)
+- API Reference - Streamlit Docs. (2023). Docs.streamlit.io. [https://docs.streamlit.io/library/api-reference](https://docs.streamlit.io/library/api-reference)
+
+#### Data Wrangling
+
+- Stepanek, H. (2020). Thinking in Pandas : how to use the Python data analysis library the right way. Apress. ISBN: 9781484258392 (Available online via SU Library)
+- API reference — pandas 2.0 documentation. (2023). Pandas.pydata.org. [https://pandas.pydata.org/docs/reference/index.html](https://pandas.pydata.org/docs/reference/index.html)
+- API reference — Polars documentation. (2023). Pola-Rs.github.io. [https://pola-rs.github.io/polars/py-polars/html/reference/](https://pola-rs.github.io/polars/py-polars/html/reference/)
+
+#### Web API's
+
+- Developer Interface — Requests 2.31.0 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/en/latest/api/](https://requests.readthedocs.io/en/latest/api/)
+‌- Fudge, M. (2018) Web APIs In Python. Ist256.com. [https://ist256.com/readings/Web-APIs-In-Python.html](https://ist256.com/readings/Web-APIs-In-Python.html)
+- OpenAPI Specification - Version 3.0.3 | Swagger. (2020). Swagger.io. [https://swagger.io/specification/](https://swagger.io/specification/)
+- RFC6749. The OAuth 2.0 Authorization Framework (2012). Datatracker.ietf.org. [https://datatracker.ietf.org/doc/html/rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
+‌- FastAPI. (2023). FastAPI. Fastapi.tiangolo.com. [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
+
+#### Data Visualizations
+
+- API Reference — Matplotlib 3.5.0 documentation. (2023). Matplotlib.org. [https://matplotlib.org/stable/api/index](https://matplotlib.org/stable/api/index)
+- API reference — seaborn 0.11.2 documentation. (2023). Seaborn.pydata.org. [https://seaborn.pydata.org/api.html](https://seaborn.pydata.org/api.html)
+- Quickstart — Folium 0.12.1 documentation. (2023. Python-Visualization.github.io. [https://python-visualization.github.io/folium/quickstart.html](https://python-visualization.github.io/folium/quickstart.html)
+- Plotly Express. (2023). Plotly.com. [https://plotly.com/python/plotly-express/](https://plotly.com/python/plotly-express/)
+- Plotly.(2023). Plotly Python Graphing Library. Plotly.com. [https://plotly.com/python/](https://plotly.com/python/)
+
+‌
+#### Web Scraping 
+
+- Real Python. (2018, January 23). Practical Introduction to Web Scraping in Python. Realpython.com; Real Python. [https://realpython.com/python-web-scraping-practical-introduction/](https://realpython.com/python-web-scraping-practical-introduction/)
+- Richardson, L. (2019). Beautiful Soup Documentation — Beautiful Soup 4.4.0 documentation. Crummy.com. [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
+- HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+
+‌
+
+‌
+
+
+‌
+
+‌
+
+‌
+
+
+
+‌
+‌
+
+‌
+
+‌
+
+
 
 - [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney
 - [Data Engineering Cookbook](https://cookbook.learndataengineering.com/) by Daniel Rodriguez
