@@ -187,35 +187,35 @@ The following grading scale translates your total points earned into a letter gr
 | Week | Monday | Wednesday | Friday |
 |-----|-----|-----|-----|
 | 1 | 8/28 | 8/30 | 9/1 |
-|   | Course Introduction | Python 1.1 |  |
+|   | Course Introduction | Python 1-1 |  |
 | 2 | 9/4 | 9/6 | 9/8 |
-|   | No Class: Labor Day | Python 1.2 | Assignment 1 (A1) |
+|   | No Class: Labor Day | Python 1-2 | Assignment 1 (A1) |
 | 3 | 9/11 | 9/13 | 9/15 |
-|   | Python 1.3 | Python 1.4 | Assignment 2 (A2) |
+|   | Python 1-3 | Python 1-4 | Assignment 2 (A2) |
 | 4 | 9/18 | 9/20 | 9/22 |
 |   | UI 2.1 | UI 2.2 | Assignment 3 (A3) |
 | 5 | 9/25 | 9/27 | 9/29 |
-|   | Data Wrangling 3.1 | Data Wrangling 3.2 | Assignment 4 (A4) |
+|   | Data Wrangling 3-1 | Data Wrangling 3-2 | Assignment 4 (A4) |
 | 6 | 10/2 | 10/4 | 10/6 |
-|   | Data Wrangling 3.3 | Data Wrangling 3.4 | Assignment 5 (A5) |
+|   | Data Wrangling 3-3 | Data Wrangling 3-4 | Assignment 5 (A5) |
 | 7 | 10/9 | 10/4 | 10/6 |
-|   | No Class: Fall Break | Data Wrangling 3.5 | |
+|   | No Class: Fall Break | Data Wrangling 3-5 | |
 | 8 | 10/16 | 10/18 | 10/20 |
-|   | Data Wrangling 3.6 | Exam 1 (E1) | Assignment 6 (A6) |
+|   | Data Wrangling 3-6 | Exam 1 (E1) | Assignment 6 (A6) |
 | 9 | 10/23 | 10/25 | 10/27 |
-|   | Web APIs 4.1 | Web APIs 4.2 | Assignment 7 (A7) |
+|   | Web APIs 4-1 | Web APIs 4-2 | Assignment 7 (A7) |
 | 10 | 10/30 | 11/1 | 11/3 |
-|   | Web APIs 4.3 | Web APIs 4.4 | Assignment 8 (A8) |
+|   | Web APIs 4-3 | Web APIs 4-4 | Assignment 8 (A8) |
 | 11 | 11/6 | 11/8 | 11/10 |
-|   | Data Visualization 5.1 | Data Visualization 5.2 | Assignment 7 (A7) |
+|   | Data Visualization 5-1 | Data Visualization 5-2 | Assignment 7 (A7) |
 | 12 | 11/13 | 11/15 | 11/17 |
-|   | Data Visualization 5.3 | Data Visualization 5.4 | Assignment 9 (A9) |
+|   | Data Visualization 5-3 | Data Visualization 5-4 | Assignment 9 (A9) |
 | 13 | 11/20 | 11/22 | 11/24 |
 |   | No Class: Thanksgiving | No Class: Thanksgiving |  |
 | 14 | 11/27 | 11/29 | 12/1 |
-|   | Web Scraping 6.1 | Web Scraping 6.2 | Assignment 8 (A8) |
+|   | Web Scraping 6-1 | Web Scraping 6-2 | Assignment 8 (A8) |
 | 15 | 12/4 | 12/6 | 12/8 |
-|   | Web Scraping 6.3 | Web Scraping 6.4 | Assignment 10 (A10) |
+|   | Web Scraping 6-3 | Web Scraping 6-4 | Assignment 10 (A10) |
 | 16 | 12/11 | 12/20 | 12/22 |
 |   | Exam 2 (E2) |  |  |
 | 17 | 12/18 | 12/20 | 12/22 |
