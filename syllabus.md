@@ -19,12 +19,12 @@ some simple data visualization but that is not the primary emphasis of the cours
  - Data structures (lists, dictionaries)
  - Using code in other libraries 
 
-### Audience: IST256 or IST356
+### Audience: IST256 or IST356?
 
 This course is intended as a follow up course to IST256. It is also appropriate for students with prior experience with programming who have an interest in data analytics.
 
-- IST256 is for students with little to no programming experience. The course is 75% python fundamentals and 25% python for data analytics. 
-- IST356 is for students with prior programming experience. The course is 25% python fundamentals and 75% python for data analytics. 
+- IST256 is for students with little to no programming experience. The course content is 75% python fundamentals and 25% python for data analytics. 
+- IST356 is for students with prior programming experience. The course content is 25% python fundamentals and 75% python for data analytics. 
 
 ### Credits
 
