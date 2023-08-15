@@ -6,3 +6,19 @@ MoWe 12:45PM - 2:05PM
 Hinds Hall 243A
 N. Lyga
 08/28/2023 - 12/11/2023
+
+
+### CLASS FLOW
+
+slides
+
+  - Code examples follow along
+
+Each unit is 50 minutes of lecture 
+and 30 minutes of group example
+
+Assignments
+
+ - Part Lab / Part Homework
+ - Reflection
+ - Submission scripts 
