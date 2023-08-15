@@ -19,12 +19,12 @@ some simple data visualization but that is not the primary emphasis of the cours
  - Data structures (lists, dictionaries)
  - Using code in other libraries 
 
-Not sure if you should take this course? Try the readiness exam: [TODO: Link to readiness exam]
+### Audience: IST256 or IST356
 
+This course is intended as a follow up course to IST256. It is also appropriate for students with prior experience with programming who have an interest in data analytics.
 
-### Audience
-
-This course is intended as a follow up course to IST256. It is also appropriate for students with a background in programming and an interest in data analytics.
+- IST256 is for students with little to no programming experience. The course is 75% python fundamentals and 25% python for data analytics. 
+- IST356 is for students with prior programming experience. The course is 25% python fundamentals and 75% python for data analytics. 
 
 ### Credits
 
@@ -93,7 +93,7 @@ There are no textbooks for this course.  All required readings are available fre
 - requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
 - HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
-### Jupyterhub 
+### Jupyterhub Programming Environment
 
 Our programming environment is a private-cloud web application called Jupyter Hub. https://v2hub.ischool.syr.edu. This is the de-facto programming environment of the scientific community. All students have an account; use your SU Microsoft Account (NetID and password) to login. After you login you will see a library folder inside that folder is an ist356 folder. All of the course content (lecture slides, code samples, assignments) is available in this folder.
 
