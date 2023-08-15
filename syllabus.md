@@ -85,7 +85,7 @@ There are no textbooks for this course.  All required readings are available fre
 - Plotly Express. (2023). Plotly.com. [https://plotly.com/python/plotly-express/](https://plotly.com/python/plotly-express/)
 - Plotly.(2023). Plotly Python Graphing Library. Plotly.com. [https://plotly.com/python/](https://plotly.com/python/)
 
-‌
+
 #### Web Scraping 
 
 - Real Python. (2018, January 23). Practical Introduction to Web Scraping in Python. Realpython.com; Real Python. [https://realpython.com/python-web-scraping-practical-introduction/](https://realpython.com/python-web-scraping-practical-introduction/)
@@ -93,38 +93,9 @@ There are no textbooks for this course.  All required readings are available fre
 - requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
 - HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
+### Jupyterhub 
 
-‌
-
-‌
-
-
-‌
-
-‌
-
-‌
-
-
-
-‌
-‌
-
-‌
-
-‌
-
-
-
-- [Python for Data Analysis](https://wesmckinney.com/book/) by Wes McKinney
-- [Data Engineering Cookbook](https://cookbook.learndataengineering.com/) by Daniel Rodriguez
-- [Web Scraping with Python](https://www.oreilly.com/library/view/web-scraping-with/9781491985564/) by Ryan Mitchell
-
-### Bring Your Own Device
-
-This course is bring your own device. You will need a Windows, Mac, or Chromebook for this course and be expected to install software on your own computer. You are expected to bring the device to class each day.
-
-[TODO: link to software installation instructions / or script to install software]
+Our programming environment is a private-cloud web application called Jupyter Hub. https://v2hub.ischool.syr.edu. This is the de-facto programming environment of the scientific community. All students have an account; use your SU Microsoft Account (NetID and password) to login. After you login you will see a library folder inside that folder is an ist356 folder. All of the course content (lecture slides, code samples, assignments) is available in this folder.
 
 ## Course Requirements and Expectations
 
@@ -134,30 +105,26 @@ You are expected to attend and participate in every class session. If you must m
 
 ### Assignments
 
-Each topics will have a lab assignment. [TODO: explain assignments and grading]
+The assignments are programming / problem solving activities that you will complete outside of class. The assignment due dates are posted on the course schedule. These assignment should be considered formative assessments. Use them to measure your knowledge of the course material to date. It is important to reflect upon your work and take an honest assessment of your abilities as you complete each assignment. 
 
 ### Exams
 
-There will be two exams in the course. Both exams are experiential. You will be expected to build an exploratory data pipeline with code as part of the examination. 
-[TODO: get specific about the exams]
+Exams are summative assessments. They are designed to test your knowledge of the material.  The exams will be issued in class on the dates posted on the course schedule. Exams are closed-book and will last about 45 minutes.
 
 ### Project
 
-In your final project you will be expected to create a data pipeline of your choosing. 
+The project is your opportunity to demonstrate what you have learned in an experiential fashion. In your final project you will be expected to create a data pipeline of your choosing. 
 
 - The pipeline should incorporate techniques we learned in the course and the more techniques you incorporate correctly the higher your grade.
 - It is expected that you will be able to explain your choices, and they will be appropriate for the problem.
 - The pipeline should be first written exploratory, and then refactored into a production quality pipeline. Both pipelines should be submitted.
 - There should be a simple data visualization or dashboard from the pipeline output as to demonstrate its usefulness.
 
-[TODO: get specific about the project]
-
-
 ## Grading
 
 | Assessment | Type | Learning Outcomes | Quantity | Points Each | Points Total |
 |------------|------|-------------------|----------|-------------|--------------|
-| Lab Assignments | Formative | 1, 2 | 10 | 2 | 30 |
+| Assignments | Formative | 1, 2 | 10 | 2 | 30 |
 | Exams | Summative | 3, 4 | 2 | 20 | 40 |
 | Project | Summative | 5 | 1 | 30 | 30 |
 | **Total** | | | | | **100** |
@@ -182,22 +149,74 @@ The following grading scale translates your total points earned into a letter gr
 
 ## Schedule Of Topics
 
-ROUGH DRAFT: ORDER OF TOPICS MAY CHANGE AND I WILL KNOW MORE WHEN I BUILD OUT LABS
+### Topics
 
-| Week | Topic | Reading | Assignment |
-|------|-------|---------|------------|
-| 1 | Programming in Python | McKinney Ch,1,2,3 | Lab 1 |
-| 2 | Pip, Modules, Ipython interact | TODO | Lab 2 |
-| 3 | HTTP, REST, API's| TODO | Lab 3 |
-| 4 | More API's, OAUTH2 |TODO | Lab 4 |
-| 5 | Pandas and Numpy basics series, and indexes| McKinney 4,5,6 | Lab 5 |
-| 6 | Pandas: joins, append, Combine, lambdas | McKinney 7,8,9  | Lab 6 |
-| 7 | Pandas: timeseries, aggregation, date handling  | McKinney 10,11| Lab 7 |
-| 8 | Web Scraping: HTML, and Beautiful Soup | Mitchell 1,2,3 | Lab 8 |
-| 9 | Web Scraping: Javascript and Form submission | Mitchell 4,10,11 | Lab 9 |
-| 10 | Web Driving with Selenium  |TODO | Lab 10 |
-| 11 | Plotting and Mapping | TODO | Lab 11 |
-| 12 | Production: Logging, Deploying cloud; preparing code for production. | Kretz | Lab 10 |
-| 13 | Cloud and Object Storage  |TODO | Lab 10 |
-| 14 | Placeholder for another topic  |TODO | Lab 10 |
+1. Python Essentials (Python)
+   1. Input, output, variables, types, conditionals
+   2. Iterations, lists, dictionaries
+   3. Functions, strings, files
+   3. Modules, import, pip
+2. User Interface (UI)
+   1. Ipywidgets and Interact in Jupyter
+   2. Streamlit interactions
+3. Data Wrangling
+   1. Pandas, series, data frame, index, numpy types, Nan, slicing
+   2. Loading / saving, file formats json, csv, parquet, pickle, HTML
+   3. Filter, sort, project, json_normalize, nested data, head, sample
+   4. Joins, append, merge, lambdas, column generation, iteration
+   5. Group by aggregations, pivot melt
+   6. Polars vs Pandas
+4. Web APIs
+   1. HTTP basics, requests, caching, error handling
+   2. Reading swagger, AWS, Azure, Google APIs
+   3. Authentication, OAUTH2
+   4. Hosting your own API with FastAPI
+5. Data Visualization
+   1. Plotting basics, matplotlib /seaborn
+   2. Folium / Leaflet
+   3. Plotly
+   4. Choropleths
+6. Web Scraping 
+   1. HTML basics, scraping techniques 
+   2. beautiful soup
+   3. requests html
+   4. Form submission, web driving
 
+### Schedule
+
+| Week | Monday | Wednesday | Friday |
+|-----|-----|-----|-----|
+| 1 | 8/28 | 8/30 | 9/1 |
+|   | Course Introduction | Python 1.1 |  |
+| 2 | 9/4 | 9/6 | 9/8 |
+|   | No Class: Labor Day | Python 1.2 | Assignment 1 (A1) |
+| 3 | 9/11 | 9/13 | 9/15 |
+|   | Python 1.3 | Python 1.4 | Assignment 2 (A2) |
+| 4 | 9/18 | 9/20 | 9/22 |
+|   | UI 2.1 | UI 2.2 | Assignment 3 (A3) |
+| 5 | 9/25 | 9/27 | 9/29 |
+|   | Data Wrangling 3.1 | Data Wrangling 3.2 | Assignment 4 (A4) |
+| 6 | 10/2 | 10/4 | 10/6 |
+|   | Data Wrangling 3.3 | Data Wrangling 3.4 | Assignment 5 (A5) |
+| 7 | 10/9 | 10/4 | 10/6 |
+|   | No Class: Fall Break | Data Wrangling 3.5 | |
+| 8 | 10/16 | 10/18 | 10/20 |
+|   | Data Wrangling 3.6 | Exam 1 (E1) | Assignment 6 (A6) |
+| 9 | 10/23 | 10/25 | 10/27 |
+|   | Web APIs 4.1 | Web APIs 4.2 | Assignment 7 (A7) |
+| 10 | 10/30 | 11/1 | 11/3 |
+|   | Web APIs 4.3 | Web APIs 4.4 | Assignment 8 (A8) |
+| 11 | 11/6 | 11/8 | 11/10 |
+|   | Data Visualization 5.1 | Data Visualization 5.2 | Assignment 7 (A7) |
+| 12 | 11/13 | 11/15 | 11/17 |
+|   | Data Visualization 5.3 | Data Visualization 5.4 | Assignment 9 (A9) |
+| 13 | 11/20 | 11/22 | 11/24 |
+|   | No Class: Thanksgiving | No Class: Thanksgiving |  |
+| 14 | 11/27 | 11/29 | 12/1 |
+|   | Web Scraping 6.1 | Web Scraping 6.2 | Assignment 8 (A8) |
+| 15 | 12/4 | 12/6 | 12/8 |
+|   | Web Scraping 6.3 | Web Scraping 6.4 | Assignment 10 (A10) |
+| 16 | 12/11 | 12/20 | 12/22 |
+|   | Exam 2 (E2) |  |  |
+| 17 | 12/18 | 12/20 | 12/22 |
+|   | Project Due (P) |  |  |
