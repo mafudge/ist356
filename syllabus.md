@@ -1,7 +1,7 @@
 # IST356: Programming Techniques for Data Analytics
 
 ## Course Description
-The exploration of common approaches for building data pipelines used in analytics. Emphasis on both exploratory and production scenarios. Programming experience required.
+Approaches for building pipelines in data analytics using the Python programming language; data cleaning, extraction, wrangling, API’s, web scraping. Building data products. Programming experience required.
 
 ### Additional Course Description
 
@@ -175,7 +175,7 @@ The following grading scale translates your total points earned into a letter gr
    1. Plotting basics, matplotlib /seaborn
    2. Folium / Leaflet
    3. Plotly
-   4. Choropleths
+   4. Choropleths / GeoPandas
 6. Web Scraping 
    1. HTML basics, scraping techniques 
    2. beautiful soup
