@@ -1,5 +1,14 @@
 # IST356: Programming Techniques for Data Analytics
 
+```
+   Room: Hinds 111
+   Time: M/W 2:15p - 3:35p
+
+   Instructor:  Michael Fudge
+   Email: mafudge@syr.edu
+   Office Hours:  TBA
+```
+
 ## Course Description
 Approaches for building pipelines in data analytics using the Python programming language; data cleaning, extraction, wrangling, API’s, web scraping. Building data products. Programming experience required.
 
@@ -73,7 +82,7 @@ There are no textbooks for this course.  All required readings are available fre
 
 - Developer Interface — Requests 2.31.0 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/en/latest/api/](https://requests.readthedocs.io/en/latest/api/)
 ‌- Fudge, M. (2018) Web APIs In Python. Ist256.com. [https://ist256.com/readings/Web-APIs-In-Python.html](https://ist256.com/readings/Web-APIs-In-Python.html)
-- OpenAPI Specification - Version 3.0.3 | Swagger. (2020). Swagger.io. [https://swagger.io/specification/](https://swagger.io/specification/)
+- OpenAPI Specification - Version 3.0.3  Swagger. (2020). Swagger.io. [https://swagger.io/specification/](https://swagger.io/specification/)
 - RFC6749. The OAuth 2.0 Authorization Framework (2012). Datatracker.ietf.org. [https://datatracker.ietf.org/doc/html/rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
 ‌- FastAPI. (2023). FastAPI. Fastapi.tiangolo.com. [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
 
@@ -92,10 +101,26 @@ There are no textbooks for this course.  All required readings are available fre
 - Richardson, L. (2019). Beautiful Soup Documentation — Beautiful Soup 4.4.0 documentation. Crummy.com. [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
 - HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+- Plawright Documentation [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
 
-### Jupyterhub Programming Environment
 
-Our programming environment is a private-cloud web application called Jupyter Hub. https://v2hub.ischool.syr.edu. This is the de-facto programming environment of the scientific community. All students have an account; use your SU Microsoft Account (NetID and password) to login. After you login you will see a library folder inside that folder is an ist356 folder. All of the course content (lecture slides, code samples, assignments) is available in this folder.
+### Bring Your Own Device
+
+You are expected to bring your computer to each class session. This class is very hands-on, and you will be programming in class often. 
+
+#### Software to install
+
+This course requires you to install software on your computer.
+
+- Python 3.11 [https://www.python.org/downloads/](https://www.python.org/downloads/) 3.11 is the stable release at the time of thiis course offering.
+-  Visual Studio Code editor [https://code.visualstudio.com/](https://code.visualstudio.com/)
+- Git Source Code Managment [https://git-scm.com/](https://git-scm.com/)
+
+#### Accounts
+
+- We will use Github classroom for assignment submission. TODO
+
+
 
 ## Course Requirements and Expectations
 
@@ -109,7 +134,7 @@ The assignments are programming / problem solving activities that you will compl
 
 ### Exams
 
-Exams are summative assessments. They are designed to test your knowledge of the material.  The exams will be issued in class on the dates posted on the course schedule. Exams are closed-book and will last about 45 minutes.
+Exams are summative assessments. They are designed to test your knowledge of the material.  The exams will be issued in class on the dates posted on the course schedule. Exams are closed-book but you may bring one 8.5x11 sheet of paper with your notes on it. Exams length is 60 minutes. They will be a mix of mix of multiple choice, short answer and code tracing and code writing.
 
 ### Project
 
@@ -124,9 +149,9 @@ The project is your opportunity to demonstrate what you have learned in an exper
 
 | Assessment | Type | Learning Outcomes | Quantity | Points Each | Points Total |
 |------------|------|-------------------|----------|-------------|--------------|
-| Assignments | Formative | 1, 2 | 10 | 2 | 30 |
-| Exams | Summative | 3, 4 | 2 | 20 | 40 |
-| Project | Summative | 5 | 1 | 30 | 30 |
+| Assignments | Formative | 1, 2 | 10 | 3 | 30 |
+| Exams | Summative | 3, 4 | 2 | 25 | 50 |
+| Project | Summative | 5 | 1 | 20 | 20 |
 | **Total** | | | | | **100** |
 
 ### Grading Table
@@ -153,9 +178,9 @@ The following grading scale translates your total points earned into a letter gr
 
 1. Python Essentials (Python)
    1. Input, output, variables, types, conditionals
-   2. Iterations, lists, dictionaries
-   3. Functions, strings, files
-   3. Modules, import, pip
+   1. Iterations, lists, dictionaries
+   1. Functions, strings, files
+   1. Modules, import, pip
 2. User Interface (UI)
    1. Ipywidgets and Interact in Jupyter
    2. Streamlit interactions
@@ -184,39 +209,39 @@ The following grading scale translates your total points earned into a letter gr
 
 ### Schedule
 
-| Week | Monday | Wednesday | Friday |
+| Week | Monday Class | Wednesday Class | Friday Assignment Due|
 |-----|-----|-----|-----|
-| 1 | 8/28 | 8/30 | 9/1 |
+| 1 | 8/26 | 8/28 | 8/30 |
 |   | Course Introduction | Python 1-1 |  |
-| 2 | 9/4 | 9/6 | 9/8 |
+| 2 | 9/2 | 9/4 | 9/6 |
 |   | No Class: Labor Day | Python 1-2 | Assignment 1 (A1) |
-| 3 | 9/11 | 9/13 | 9/15 |
+| 3 | 9/9 | 9/11 | 9/13 |
 |   | Python 1-3 | Python 1-4 | Assignment 2 (A2) |
-| 4 | 9/18 | 9/20 | 9/22 |
+| 4 | 9/16 | 9/18 | 9/20 |
 |   | UI 2.1 | UI 2.2 | Assignment 3 (A3) |
-| 5 | 9/25 | 9/27 | 9/29 |
+| 5 | 9/23 | 9/37 | 9/27 |
 |   | Data Wrangling 3-1 | Data Wrangling 3-2 | Assignment 4 (A4) |
-| 6 | 10/2 | 10/4 | 10/6 |
+| 6 | 9/30 | 10/2 | 10/4 |
 |   | Data Wrangling 3-3 | Data Wrangling 3-4 | Assignment 5 (A5) |
-| 7 | 10/9 | 10/4 | 10/6 |
-|   | No Class: Fall Break | Data Wrangling 3-5 | |
-| 8 | 10/16 | 10/18 | 10/20 |
-|   | Data Wrangling 3-6 | Exam 1 (E1) | Assignment 6 (A6) |
-| 9 | 10/23 | 10/25 | 10/27 |
+| 7 | 10/7 | 10/9 | 10/11 |
+|   | Data Wrangling 3-5 | Data Wrangling 3-6 | Assignment 6 (A6) |
+| 8 | 10/14 | 10/16 | 10/18 |
+|   |  No Class: Fall Break | Exam 1 (E1) |  |
+| 9 | 10/21 | 10/23 | 10/25 |
 |   | Web APIs 4-1 | Web APIs 4-2 | Assignment 7 (A7) |
-| 10 | 10/30 | 11/1 | 11/3 |
+| 10 | 10/28 | 10/30 | 11/1 |
 |   | Web APIs 4-3 | Web APIs 4-4 | Assignment 8 (A8) |
-| 11 | 11/6 | 11/8 | 11/10 |
+| 11 | 11/4 | 11/6 | 11/8 |
 |   | Data Visualization 5-1 | Data Visualization 5-2 | Assignment 7 (A7) |
-| 12 | 11/13 | 11/15 | 11/17 |
+| 12 | 11/11 | 11/13 | 11/15 |
 |   | Data Visualization 5-3 | Data Visualization 5-4 | Assignment 9 (A9) |
-| 13 | 11/20 | 11/22 | 11/24 |
-|   | No Class: Thanksgiving | No Class: Thanksgiving |  |
-| 14 | 11/27 | 11/29 | 12/1 |
+| 13 | 11/18 | 11/20 | 11/22 |
 |   | Web Scraping 6-1 | Web Scraping 6-2 | Assignment 8 (A8) |
-| 15 | 12/4 | 12/6 | 12/8 |
+| 14 | 11/25 | 11/27 | 11/29 |
+|   | No Class: Thanksgiving | No Class: Thanksgiving |  |
+| 15 | 12/2 | 12/4 | 12/6 |
 |   | Web Scraping 6-3 | Web Scraping 6-4 | Assignment 10 (A10) |
-| 16 | 12/11 | 12/20 | 12/22 |
-|   | Exam 2 (E2) |  |  |
-| 17 | 12/18 | 12/20 | 12/22 |
-|   | Project Due (P) |  |  |
+| 16 | 12/9 | 12/11 | 12/13 |
+|   | Exam 2 (E2) | No Class | No Class  |
+| 17 | 12/16 | 12/18 | 12/20 |
+|   | Project Due (P) | Semester Over  |  Semester Over |
