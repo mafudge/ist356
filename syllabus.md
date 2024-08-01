@@ -118,8 +118,7 @@ This course requires you to install software on your computer.
 
 #### Accounts
 
-- We will use Github classroom for assignment submission. TODO
-
+- We will use Github classroom for assignment submission. You must create a Github account and then join the classroom, here: [https://classroom.github.com/a/3sqwAo8U](https://classroom.github.com/a/3sqwAo8U)
 
 
 ## Course Requirements and Expectations
