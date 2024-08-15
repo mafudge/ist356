@@ -112,7 +112,7 @@ You are expected to bring your computer to each class session. This class is ver
 
 This course requires you to install software on your computer.
 
-- Python 3.11 [https://www.python.org/downloads/](https://www.python.org/downloads/) 3.11 is the stable release at the time of thiis course offering.
+- Python 3.11 [https://www.python.org/downloads/](https://www.python.org/downloads/) 3.11 is the stable release at the time of this course offering.
 -  Visual Studio Code editor [https://code.visualstudio.com/](https://code.visualstudio.com/)
 - Git Source Code Managment [https://git-scm.com/](https://git-scm.com/)
 
@@ -170,6 +170,11 @@ The following grading scale translates your total points earned into a letter gr
 | Unsatisfactory | 250 - 299  | D | 1.000 |
 | | 0 - 249 | F | 0.000 |
 
+## Other Policies
+
+### Use of AI in this Course
+
+Based on the assignments in this course and our specified learning outcomes, the full use of artificial intelligence as a tool, with disclosure and citation, is permitted in this course. Students do not need to ask permission to use these tools before starting an assignment or exam, but they must explicitly and fully indicate which tools were used and describe how they were used.
 
 ## Schedule Of Topics
 
