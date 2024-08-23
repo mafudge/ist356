@@ -129,7 +129,9 @@ You are expected to attend and participate in every class session. If you must m
 
 ### Assignments
 
-The assignments are programming / problem solving activities that you will complete outside of class. The assignment due dates are posted on the course schedule. These assignment should be considered formative assessments. Use them to measure your knowledge of the course material to date. It is important to reflect upon your work and take an honest assessment of your abilities as you complete each assignment. 
+The assignments are programming / problem solving activities that you will complete outside of class. The assignment due dates are posted on the course schedule. Consider these assignments formative assessments - practice so you can get better at computational thinking, problem solving and writing code. It is important to reflect upon your work and take an honest assessment of your abilities as you complete each assignment. 
+
+Each Monday we will review the homework assignment. Students will be asked to contribute to the discussion.
 
 ### Exams
 
@@ -181,31 +183,42 @@ Based on the assignments in this course and our specified learning outcomes, the
 ### Topics
 
 1. Python Essentials (Python)
+
    1. Input, output, variables, types, conditionals
    1. Iterations, lists, dictionaries
    1. Functions, strings, files
    1. Modules, import, pip
+
 2. User Interface (UI)
+
    1. Ipywidgets and Interact in Jupyter
    2. Streamlit interactions
+
 3. Data Wrangling
+
    1. Pandas, series, data frame, index, numpy types, Nan, slicing
    2. Loading / saving, file formats json, csv, parquet, pickle, HTML
    3. Filter, sort, project, json_normalize, nested data, head, sample
    4. Joins, append, merge, lambdas, column generation, iteration
    5. Group by aggregations, pivot melt
    6. Polars vs Pandas
+
 4. Web APIs
+
    1. HTTP basics, requests, caching, error handling
    2. Reading swagger, AWS, Azure, Google APIs
    3. Authentication, OAUTH2
    4. Hosting your own API with FastAPI
+
 5. Data Visualization
+
    1. Plotting basics, matplotlib /seaborn
    2. Folium / Leaflet
    3. Plotly
    4. Choropleths / GeoPandas
+
 6. Web Scraping 
+
    1. HTML basics, scraping techniques 
    2. beautiful soup
    3. requests html
