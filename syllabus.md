@@ -186,19 +186,19 @@ Based on the assignments in this course and our specified learning outcomes, the
 #### Unit Reading List
 
 - Python 1.1: Input, output, variables, types, conditionals 
-    - https://www.tomasbeuzen.com/python-programming-for-data-cience  (1.1 to 1.7) 
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/]  (1.1 to 1.7) 
 - Python 1-2: Iterations, lists, dictionaries, comprehensions
-    - https://www.tomasbeuzen.com/python-programming-for-data-science/ (2.1 to 2.4)
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/] (2.1 to 2.4)
 - Python 1-3: Functions, documentaion, strings, files
-    - https://www.tomasbeuzen.com/python-programming-for-data-science/ (2.5 to 2.10)
-    - For files / context Managers: https://realpython.com/python-with-statement    
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/] (2.5 to 2.10)
+    - For files / context Managers: [https://realpython.com/python-with-statement]    
 - Python 1-4: Modules, import, pip, testing
-    - https://www.tomasbeuzen.com/python-programming-for-data-science/  (3.1 to 3.2, and 4.1 to 4.4)
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/]  (3.1 to 3.2, and 4.1 to 4.4)
 
 #### Reference Documenation
 
-- Official Python Docs: https://docs.python.org/3/
-- - PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
+- Official Python Docs: [https://docs.python.org/3/]
+- PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
 
 ### 2. User Interface (UI)
 
