@@ -60,4 +60,14 @@ you should see a credit here.
 
 ## Step 3: Configure VS Code
 
-The last step is to configure VS Code for Python debugging. Provided everything else is in order, this should be straight forward
+The last step is to configure VS Code for Python debugging. Provided everything else is in order, this should be straightforward.
+
+1. Open Visual studio code. You will be asked to configure it.
+    1. Pick a theme: Light, Dark, etc...
+    2. Add the following Extensions: Python, Jupyter, Github Copilot
+    3. Close the welcome Tab but keep VS Code Open
+2. Clone the IST356 master code repository:
+    1. Click the "Explorer" Icon in the Activity Bar
+    2. Click "Clone Repository" button
+    3. In the search bar type mafudge/ist356
+

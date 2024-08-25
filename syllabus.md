@@ -110,16 +110,15 @@ You are expected to bring your computer to each class session. This class is ver
 
 #### Software to install
 
-This course requires you to install software on your computer.
+This course requires you to install software on your computer. The intro section of this course provides detailed instructions.
 
-- Python 3.11 [https://www.python.org/downloads/](https://www.python.org/downloads/) 3.11 is the stable release at the time of this course offering.
--  Visual Studio Code editor [https://code.visualstudio.com/](https://code.visualstudio.com/)
-- Git Source Code Managment [https://git-scm.com/](https://git-scm.com/)
+- Python 3
+- Visual Studio Code editor
+- Git Source Code Managment
 
 #### Accounts
 
-- We will use Github classroom for assignment submission. You must create a Github account and then join the classroom, here: [https://classroom.github.com/a/3sqwAo8U](https://classroom.github.com/a/3sqwAo8U)
-
+- We will use Github for assignment submission. 
 
 ## Course Requirements and Expectations
 
