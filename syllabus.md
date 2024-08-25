@@ -160,16 +160,16 @@ The following grading scale translates your total points earned into a letter gr
 
 | Student Achievement | Total Points Earned	| Registrar Grade |Grade Points |
 |---------------------|---------------------|-----------------|-------------|
-| Mastery | 475 - 500 | A | 4.000 |
-| | 450 - 474 | A- | 3.666 |
-| Satisfactory | 425 - 449 | B+ | 3.333 |
-| | 400 - 424   | B | 3.000 |
-| | 375 - 399  | B- | 2.666 |
-| Low Passing  | 350 - 374 | C+ | 2.333 |
-| | 325 - 349  | C | 2.000 |
-| | 300 - 324  | C- | 1.666 |
-| Unsatisfactory | 250 - 299  | D | 1.000 |
-| | 0 - 249 | F | 0.000 |
+| Mastery | 95 - 100 | A | 4.000 |
+| | 90 - 94 | A- | 3.666 |
+| Satisfactory | 85 - 89 | B+ | 3.333 |
+| | 80 - 84   | B | 3.000 |
+| | 75 - 79  | B- | 2.666 |
+| Low Passing  | 70 - 74 | C+ | 2.333 |
+| | 65 - 69  | C | 2.000 |
+| | 60 - 64  | C- | 1.666 |
+| Unsatisfactory | 50 - 60  | D | 1.000 |
+| | 0 - 49 | F | 0.000 |
 
 ## Other Policies
 
@@ -180,7 +180,7 @@ Based on the assignments in this course and our specified learning outcomes, the
 ## Schedule Of Topics
 
 ### Topics
-
+```
 1. Python Essentials (Python)
 
    1. Input, output, variables, types, conditionals
@@ -222,6 +222,7 @@ Based on the assignments in this course and our specified learning outcomes, the
    2. beautiful soup
    3. requests html
    4. Form submission, web driving
+```
 
 ### Schedule
 

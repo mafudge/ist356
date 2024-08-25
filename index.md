@@ -1,10 +1,12 @@
 # IST356
-# Programming Techniques for Data Analytics
+
+Programming Techniques for Data Analytics
 
 
 ## Contents
 
 - [Syllabus](syllabus.md)
+- [Topics](topics.md)
 
 
 
