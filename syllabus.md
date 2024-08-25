@@ -181,9 +181,9 @@ Based on the assignments in this course and our specified learning outcomes, the
 
 ## Reading List
 
-### 1. Python Essentials (Python)
+### Unit 1. Python Essentials (Python)
 
-#### Unit Reading List
+#### Reading List
 
 - Python 1.1: Input, output, variables, types, conditionals 
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)  (1.1 to 1.7) 
@@ -200,9 +200,9 @@ Based on the assignments in this course and our specified learning outcomes, the
 - Official Python Docs: [https://docs.python.org/3/](https://docs.python.org/3/)
 - PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
 
-### 2. User Interface (UI)
+### Unit 2. User Interface (UI)
 
-#### Unit Reading List
+#### Reading List
 
 - UI 2-1: Ipywidgets and Interact in Jupyter
   - [https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact](https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact) 
@@ -214,9 +214,9 @@ Based on the assignments in this course and our specified learning outcomes, the
 - IPywidget list: [https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html) 
 - Streamlit API Reference: [https://docs.streamlit.io/develop/api-reference](https://docs.streamlit.io/develop/api-reference)
 
-### 3. Data Wrangling
+### Unit 3. Data Wrangling
 
-#### Unit Reading List
+#### Reading List
 
 - Data 3-1: Pandas: series, data frame, index, numpy types, Nan, slicing
   - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (7.1 - 7.4) 
@@ -235,66 +235,66 @@ Based on the assignments in this course and our specified learning outcomes, the
 
 - Pandas 2 documentation. [https://pandas.pydata.org/docs/reference/index.html](https://pandas.pydata.org/docs/reference/index.html)
 
-### 4. Web APIs
+### Unit 4. Web APIs
 
-#### Unit Reading List
+#### Reading List
 
 - API 4-1: HTTP basics, requests, caching, error handling
-  - Python Requests Quickstart: https://requests.readthedocs.io/en/latest/user/quickstart/
+  - Python Requests Quickstart: [https://requests.readthedocs.io/en/latest/user/quickstart/](https://requests.readthedocs.io/en/latest/user/quickstart/)
 - API 4-2: Reading swagger, GET/POST, API Keys 
-  - Fudge, M. (2018) Web APIs In Python. https://ist256.com/readings/Web-APIs-In-Python.html (Parts 1-3)
+  - Fudge, M. (2018) Web APIs In Python. [https://ist256.com/readings/Web-APIs-In-Python.html](https://ist256.com/readings/Web-APIs-In-Python.html) (Parts 1-3)
 - API 4-3: Open AI, AWS, Azure, Google APIs, OAUTH2 Flows
-  - Fudge, M. (2018) Web APIs In Python. https://ist256.com/readings/Web-APIs-In-Python.html (Part 4)
+  - [https://ist256.com/readings/Web-APIs-In-Python.html](https://ist256.com/readings/Web-APIs-In-Python.html) (Part 4)
 - API 4-4: Hosting your own API with FastAPI
-  - Fast API Tutorial https://fastapi.tiangolo.com/tutorial/
+  - Fast API Tutorial. [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/) 
 
 #### Reference Documentation
 
-- Python Requests API Reference: https://requests.readthedocs.io/en/latest/api/ 
-- The iSchool IoT Portal: https://portal.ischool-iot.net
-- OpenAPI Specification - Version 3.0.3  Swagger. (2020). https://swagger.io/specification
-- RFC6749. The OAuth 2.0 Authorization Framework (2012) https://datatracker.ietf.org/doc/html/rfc6749
-‌- FastAPI Reference https://fastapi.tiangolo.com/reference/
+- Python Requests API Reference: [https://requests.readthedocs.io/en/latest/api/](https://requests.readthedocs.io/en/latest/api/) 
+- The iSchool IoT Portal: [https://portal.ischool-iot.net](https://portal.ischool-iot.net)
+- OpenAPI Specification - Version 3.0.3  Swagger. (2020). [https://swagger.io/specification](https://swagger.io/specification)
+- RFC6749. The OAuth 2.0 Authorization Framework (2012) [https://datatracker.ietf.org/doc/html/rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
+‌- FastAPI Reference. [https://fastapi.tiangolo.com/reference/](https://fastapi.tiangolo.com/reference/) 
 
 
-### 5. Web Scraping 
+### Unit 5. Web Scraping 
 
-#### Unit Reading List
+#### Reading List
 
 - Web 5-1: HTML basics, scraping techniques
-  - https://scrapfly.io/blog/web-scraping-with-playwright-and-python/
+  - Web Scraping with Python Playwright. [https://scrapfly.io/blog/web-scraping-with-playwright-and-python/](https://scrapfly.io/blog/web-scraping-with-playwright-and-python/)
 - Web 5-2: Playwright locators: finding data on the page
-  - https://playwright.dev/python/docs/locators
+  - Playright documentaiton: locators. [https://playwright.dev/python/docs/locators](https://playwright.dev/python/docs/locators)
 - Web 5-3: Playwright inputs: actionability
-  - https://playwright.dev/python/docs/actionability
+  - [https://playwright.dev/python/docs/actionability](https://playwright.dev/python/docs/actionability)
 - Web 5-4: Playwright: authentication
-  - https://playwright.dev/python/docs/auth
+  - [https://playwright.dev/python/docs/auth](https://playwright.dev/python/docs/auth)
    
 #### Reference Documentation 
 
-- Python Playwright docs: https://playwright.dev/python/
-- CSS Selectors Cheat Sheet: https://www.freecodecamp.org/news/css-selectors-cheat-sheet/
+- Python Playwright docs: [https://playwright.dev/python/](https://playwright.dev/python/)
+- CSS Selectors Cheat Sheet: [https://www.freecodecamp.org/news/css-selectors-cheat-sheet/](https://www.freecodecamp.org/news/css-selectors-cheat-sheet/)
 
 
-### 6. Data Visualization
+### Unit 6. Data Visualization
 
-#### Unit Reading List
+#### Reading List
 
 - Viz 6-1: Plotting basics, matplotlib /seaborn 
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (9.4)
-  - Fudge, M. (2024) Python Visualizations. https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb (1-6 Seaborn)
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (9.4)
+  - Fudge, M. (2024) Python Visualizations. [https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb](https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb) (1-6 Seaborn)
 - Viz 6-2: Folium / Leaflet
-  - Fudge, M. (2024) Python Visualizations. https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb (8-9 Folium)
+  - Fudge, M. (2024) Python Visualizations. [https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb](https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb) (8-9 Folium)
 - Viz 6-3: Plotly
-  - https://plotly.com/python/plotly-fundamentals/ (The first 4 tutorials - Figures to Plotly express)
+  - [https://plotly.com/python/plotly-fundamentals/](https://plotly.com/python/plotly-fundamentals/) (The first 4 tutorials - Figures to Plotly express)
 - Viz 6-4: Choropleths / GeoPandas
-  - Introduction to Geopandas: https://geopandas.org/en/stable/getting_started/introduction.html
+  - Introduction to Geopandas: [https://geopandas.org/en/stable/getting_started/introduction.html](https://geopandas.org/en/stable/getting_started/introduction.html)
 
 #### Reference Documentation 
 
 
-- Plotly for Python: https://plotly.com/python/plotly-fundamentals/
-- API reference — Seaborn Documentation. https://seaborn.pydata.org/api.html
-- Folium documentation. https://python-visualization.github.io/folium/quickstart.html
-- Seaborn Documentation. https://seaborn.pydata.org/api.html 
-- Geopandas Documentation. https://geopandas.org/
+- Plotly for Python: [https://plotly.com/python/plotly-fundamentals/](https://plotly.com/python/plotly-fundamentals/)
+- API reference — Seaborn Documentation. [https://seaborn.pydata.org/api.html](https://seaborn.pydata.org/api.html)
+- Folium documentation. [https://python-visualization.github.io/folium/quickstart.html](https://python-visualization.github.io/folium/quickstart.html)
+- Seaborn Documentation. [https://seaborn.pydata.org/api.html](https://seaborn.pydata.org/api.html) 
+- Geopandas Documentation. [https://geopandas.org/](https://geopandas.org/)
