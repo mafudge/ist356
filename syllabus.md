@@ -101,7 +101,7 @@ There are no textbooks for this course.  All required readings are available fre
 - Richardson, L. (2019). Beautiful Soup Documentation — Beautiful Soup 4.4.0 documentation. Crummy.com. [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
 - HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-- Plawright Documentation [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
+Playwright - Playwright Documentation [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
 
 
 ### Bring Your Own Device
