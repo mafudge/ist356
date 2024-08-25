@@ -58,50 +58,12 @@ Upon completion of this course, students will be able to:
 
 ### Textbooks
 
-There are no textbooks for this course.  All required readings are available freely online. The online sources are the most up-to-date references to the relevant course material. 
+There is no textbook you need to purchase for this course. All required readings are available freely online, and in many cases, the online sources are the most up-to-date references to the relevant course material. See reading list section for additional details. 
 
-#### Python 
+#### Main Text
 
-- PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
-- The Python Language Reference. (2022). Python Documentation.  [https://docs.python.org/3.11/reference/index.html](https://docs.python.org/3.11/reference/index.html)
-- The Python Standard Library. (2022.). Python Documentation. [https://docs.python.org/3.11/library/index.html](https://docs.python.org/3.11/library/index.html)
-
-#### User Interface
-
-- Widget List — Jupyter Widgets 8.1.0 documentation. (2022). Readthedocs.io. [https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html)
-- Using Interact — Jupyter Widgets 8.1.0 documentation. (2017). Readthedocs.io. [https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact](https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact)
-- API Reference - Streamlit Docs. (2023). Docs.streamlit.io. [https://docs.streamlit.io/library/api-reference](https://docs.streamlit.io/library/api-reference)
-
-#### Data Wrangling
-
-- Stepanek, H. (2020). Thinking in Pandas : how to use the Python data analysis library the right way. Apress. ISBN: 9781484258392 (Available online via SU Library)
-- API reference — pandas 2.0 documentation. (2023). Pandas.pydata.org. [https://pandas.pydata.org/docs/reference/index.html](https://pandas.pydata.org/docs/reference/index.html)
-- API reference — Polars documentation. (2023). Pola-Rs.github.io. [https://pola-rs.github.io/polars/py-polars/html/reference/](https://pola-rs.github.io/polars/py-polars/html/reference/)
-
-#### Web API's
-
-- Developer Interface — Requests 2.31.0 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/en/latest/api/](https://requests.readthedocs.io/en/latest/api/)
-‌- Fudge, M. (2018) Web APIs In Python. Ist256.com. [https://ist256.com/readings/Web-APIs-In-Python.html](https://ist256.com/readings/Web-APIs-In-Python.html)
-- OpenAPI Specification - Version 3.0.3  Swagger. (2020). Swagger.io. [https://swagger.io/specification/](https://swagger.io/specification/)
-- RFC6749. The OAuth 2.0 Authorization Framework (2012). Datatracker.ietf.org. [https://datatracker.ietf.org/doc/html/rfc6749](https://datatracker.ietf.org/doc/html/rfc6749)
-‌- FastAPI. (2023). FastAPI. Fastapi.tiangolo.com. [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
-
-#### Data Visualizations
-
-- API Reference — Matplotlib 3.5.0 documentation. (2023). Matplotlib.org. [https://matplotlib.org/stable/api/index](https://matplotlib.org/stable/api/index)
-- API reference — seaborn 0.11.2 documentation. (2023). Seaborn.pydata.org. [https://seaborn.pydata.org/api.html](https://seaborn.pydata.org/api.html)
-- Quickstart — Folium 0.12.1 documentation. (2023. Python-Visualization.github.io. [https://python-visualization.github.io/folium/quickstart.html](https://python-visualization.github.io/folium/quickstart.html)
-- Plotly Express. (2023). Plotly.com. [https://plotly.com/python/plotly-express/](https://plotly.com/python/plotly-express/)
-- Plotly.(2023). Plotly Python Graphing Library. Plotly.com. [https://plotly.com/python/](https://plotly.com/python/)
-
-
-#### Web Scraping 
-
-- Real Python. (2018, January 23). Practical Introduction to Web Scraping in Python. Realpython.com; Real Python. [https://realpython.com/python-web-scraping-practical-introduction/](https://realpython.com/python-web-scraping-practical-introduction/)
-- Richardson, L. (2019). Beautiful Soup Documentation — Beautiful Soup 4.4.0 documentation. Crummy.com. [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- requests-HTML v0.3.4 documentation. (2023). Requests.readthedocs.io. [https://requests.readthedocs.io/projects/requests-html/en/latest/](https://requests.readthedocs.io/projects/requests-html/en/latest/)
-- HTML elements reference. (2019, June 6). MDN Web Docs. [https://developer.mozilla.org/en-US/docs/Web/HTML/Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
-Playwright - Playwright Documentation [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
+- Python Programming for Data Science, by T. Beuzen (2021)
+[https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)
 
 
 ### Bring Your Own Device
@@ -177,54 +139,7 @@ The following grading scale translates your total points earned into a letter gr
 
 Based on the assignments in this course and our specified learning outcomes, the full use of artificial intelligence as a tool, with disclosure and citation, is permitted in this course. Students do not need to ask permission to use these tools before starting an assignment or exam, but they must explicitly and fully indicate which tools were used and describe how they were used.
 
-## Schedule Of Topics
-
-### Topics
-```
-1. Python Essentials (Python)
-
-   1. Input, output, variables, types, conditionals
-   1. Iterations, lists, dictionaries
-   1. Functions, strings, files
-   1. Modules, import, pip
-
-2. User Interface (UI)
-
-   1. Ipywidgets and Interact in Jupyter
-   2. Streamlit interactions
-
-3. Data Wrangling
-
-   1. Pandas, series, data frame, index, numpy types, Nan, slicing
-   2. Loading / saving, file formats json, csv, parquet, pickle, HTML
-   3. Filter, sort, project, json_normalize, nested data, head, sample
-   4. Joins, append, merge, lambdas, column generation, iteration
-   5. Group by aggregations, pivot melt
-   6. Polars vs Pandas
-
-4. Web APIs
-
-   1. HTTP basics, requests, caching, error handling
-   2. Reading swagger, AWS, Azure, Google APIs
-   3. Authentication, OAUTH2
-   4. Hosting your own API with FastAPI
-
-5. Data Visualization
-
-   1. Plotting basics, matplotlib /seaborn
-   2. Folium / Leaflet
-   3. Plotly
-   4. Choropleths / GeoPandas
-
-6. Web Scraping 
-
-   1. HTML basics, scraping techniques 
-   2. beautiful soup
-   3. requests html
-   4. Form submission, web driving
-```
-
-### Schedule
+## Class Schedule
 
 | Week | Monday Class | Wednesday Class | Friday Assignment Due|
 |-----|-----|-----|-----|
@@ -262,3 +177,124 @@ Based on the assignments in this course and our specified learning outcomes, the
 |   | Exam 2 (E2) | No Class | No Class  |
 | 17 | 12/16 | 12/18 | 12/20 |
 |   | Project Due (P) | Semester Over  |  Semester Over |
+
+
+## Reading List
+
+### 1. Python Essentials (Python)
+
+#### Unit Reading List
+
+- Python 1.1: Input, output, variables, types, conditionals 
+    - https://www.tomasbeuzen.com/python-programming-for-data-cience  (1.1 to 1.7) 
+- Python 1-2: Iterations, lists, dictionaries, comprehensions
+    - https://www.tomasbeuzen.com/python-programming-for-data-science/ (2.1 to 2.4)
+- Python 1-3: Functions, documentaion, strings, files
+    - https://www.tomasbeuzen.com/python-programming-for-data-science/ (2.5 to 2.10)
+    - For files / context Managers: https://realpython.com/python-with-statement    
+- Python 1-4: Modules, import, pip, testing
+    - https://www.tomasbeuzen.com/python-programming-for-data-science/  (3.1 to 3.2, and 4.1 to 4.4)
+
+#### Reference Documenation
+
+- Official Python Docs: https://docs.python.org/3/
+- - PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
+
+### 2. User Interface (UI)
+
+#### Unit Reading List
+
+- UI 2-1: Ipywidgets and Interact in Jupyter
+  - https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact 
+- UI 2-2: Streamlit interactions
+  - https://docs.streamlit.io/get-started/fundamentals/main-concepts 
+
+#### Reference Documenation
+
+- IPywidget list: https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html 
+- Streamlit API Reference: https://docs.streamlit.io/develop/api-reference
+
+### 3. Data Wrangling
+
+#### Unit Reading List
+
+- Data 3-1: Pandas: series, data frame, index, numpy types, Nan, slicing
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (7.1 - 7.4) 
+- Data 3-2: Loading / saving, file formats json, csv, parquet, pickle, HTML
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.1 - 8.2) 
+- Data 3-3: Working with multiple dataframes: Concat, Merge
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.4)
+- Data 3-4: Apply, iterations, lambdas
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.3)
+- Data 3-5: Reshaping: Group by / aggregations, Pivot, Melt
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.5)
+- Data 3-6: String and Date Handling
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (9.1, 9.2, 9.5)
+
+#### Reference Documentation
+
+- Pandas 2 documentation. https://pandas.pydata.org/docs/reference/index.html
+
+### 4. Web APIs
+
+#### Unit Reading List
+
+- API 4-1: HTTP basics, requests, caching, error handling
+  - Python Requests Quickstart: https://requests.readthedocs.io/en/latest/user/quickstart/
+- API 4-2: Reading swagger, GET/POST, API Keys 
+  - Fudge, M. (2018) Web APIs In Python. https://ist256.com/readings/Web-APIs-In-Python.html (Parts 1-3)
+- API 4-3: Open AI, AWS, Azure, Google APIs, OAUTH2 Flows
+  - Fudge, M. (2018) Web APIs In Python. https://ist256.com/readings/Web-APIs-In-Python.html (Part 4)
+- API 4-4: Hosting your own API with FastAPI
+  - Fast API Tutorial https://fastapi.tiangolo.com/tutorial/
+
+#### Reference Documentation
+
+- Python Requests API Reference: https://requests.readthedocs.io/en/latest/api/ 
+- The iSchool IoT Portal: https://portal.ischool-iot.net
+- OpenAPI Specification - Version 3.0.3  Swagger. (2020). https://swagger.io/specification
+- RFC6749. The OAuth 2.0 Authorization Framework (2012) https://datatracker.ietf.org/doc/html/rfc6749
+‌- FastAPI Reference https://fastapi.tiangolo.com/reference/
+
+
+### 5. Web Scraping 
+
+#### Unit Reading List
+
+- Web 5-1: HTML basics, scraping techniques
+  - https://scrapfly.io/blog/web-scraping-with-playwright-and-python/
+- Web 5-2: Playwright locators: finding data on the page
+  - https://playwright.dev/python/docs/locators
+- Web 5-3: Playwright inputs: actionability
+  - https://playwright.dev/python/docs/actionability
+- Web 5-4: Playwright: authentication
+  - https://playwright.dev/python/docs/auth
+   
+#### Reference Documentation 
+
+- Python Playwright docs: https://playwright.dev/python/
+- CSS Selectors Cheat Sheet: https://www.freecodecamp.org/news/css-selectors-cheat-sheet/
+
+
+### 6. Data Visualization
+
+#### Unit Reading List
+
+- Viz 6-1: Plotting basics, matplotlib /seaborn 
+  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (9.4)
+  - Fudge, M. (2024) Python Visualizations. https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb (1-6 Seaborn)
+- Viz 6-2: Folium / Leaflet
+  - Fudge, M. (2024) Python Visualizations. https://github.com/ist256/fall2024/blob/main/lessons/12-Visualization/DataVisualization.ipynb (8-9 Folium)
+- Viz 6-3: Plotly
+  - https://plotly.com/python/plotly-fundamentals/ (The first 4 tutorials - Figures to Plotly express)
+- Viz 6-4: Choropleths / GeoPandas
+  - Introduction to Geopandas: https://geopandas.org/en/stable/getting_started/introduction.html
+
+#### Reference Documentation 
+
+
+- Plotly for Python: https://plotly.com/python/plotly-fundamentals/
+- API reference — Seaborn Documentation. https://seaborn.pydata.org/api.html
+- Folium documentation. https://python-visualization.github.io/folium/quickstart.html
+- Seaborn Documentation. https://seaborn.pydata.org/api.html 
+- Geopandas Documentation. https://geopandas.org/
