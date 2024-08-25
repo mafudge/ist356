@@ -186,18 +186,18 @@ Based on the assignments in this course and our specified learning outcomes, the
 #### Unit Reading List
 
 - Python 1.1: Input, output, variables, types, conditionals 
-    - [https://www.tomasbeuzen.com/python-programming-for-data-science/]  (1.1 to 1.7) 
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)  (1.1 to 1.7) 
 - Python 1-2: Iterations, lists, dictionaries, comprehensions
-    - [https://www.tomasbeuzen.com/python-programming-for-data-science/] (2.1 to 2.4)
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (2.1 to 2.4)
 - Python 1-3: Functions, documentaion, strings, files
-    - [https://www.tomasbeuzen.com/python-programming-for-data-science/] (2.5 to 2.10)
-    - For files / context Managers: [https://realpython.com/python-with-statement]    
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (2.5 to 2.10)
+    - For files / context Managers: [https://realpython.com/python-with-statement(https://realpython.com/python-with-statement)]    
 - Python 1-4: Modules, import, pip, testing
-    - [https://www.tomasbeuzen.com/python-programming-for-data-science/]  (3.1 to 3.2, and 4.1 to 4.4)
+    - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)  (3.1 to 3.2, and 4.1 to 4.4)
 
 #### Reference Documenation
 
-- Official Python Docs: [https://docs.python.org/3/]
+- Official Python Docs: [https://docs.python.org/3/](https://docs.python.org/3/)
 - PY4E - Python for Everybody. (2018). Py4e.com. [https://www.py4e.com/book](https://www.py4e.com/book)
 
 ### 2. User Interface (UI)
@@ -205,35 +205,35 @@ Based on the assignments in this course and our specified learning outcomes, the
 #### Unit Reading List
 
 - UI 2-1: Ipywidgets and Interact in Jupyter
-  - https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact 
+  - [https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact](https://ipywidgets.readthedocs.io/en/latest/examples/Using%20Interact.html#using-interact) 
 - UI 2-2: Streamlit interactions
-  - https://docs.streamlit.io/get-started/fundamentals/main-concepts 
+  - [https://docs.streamlit.io/get-started/fundamentals/main-concepts](https://docs.streamlit.io/get-started/fundamentals/main-concepts) 
 
 #### Reference Documenation
 
-- IPywidget list: https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html 
-- Streamlit API Reference: https://docs.streamlit.io/develop/api-reference
+- IPywidget list: [https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html) 
+- Streamlit API Reference: [https://docs.streamlit.io/develop/api-reference](https://docs.streamlit.io/develop/api-reference)
 
 ### 3. Data Wrangling
 
 #### Unit Reading List
 
 - Data 3-1: Pandas: series, data frame, index, numpy types, Nan, slicing
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (7.1 - 7.4) 
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (7.1 - 7.4) 
 - Data 3-2: Loading / saving, file formats json, csv, parquet, pickle, HTML
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.1 - 8.2) 
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (8.1 - 8.2) 
 - Data 3-3: Working with multiple dataframes: Concat, Merge
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.4)
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (8.4)
 - Data 3-4: Apply, iterations, lambdas
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.3)
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (8.3)
 - Data 3-5: Reshaping: Group by / aggregations, Pivot, Melt
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (8.5)
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (8.5)
 - Data 3-6: String and Date Handling
-  - https://www.tomasbeuzen.com/python-programming-for-data-science/ (9.1, 9.2, 9.5)
+  - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (9.1, 9.2, 9.5)
 
 #### Reference Documentation
 
-- Pandas 2 documentation. https://pandas.pydata.org/docs/reference/index.html
+- Pandas 2 documentation. [https://pandas.pydata.org/docs/reference/index.html](https://pandas.pydata.org/docs/reference/index.html)
 
 ### 4. Web APIs
 
