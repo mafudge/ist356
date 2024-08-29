@@ -6,7 +6,7 @@
 
    Instructor:  Michael Fudge
    Email: mafudge@syr.edu
-   Office Hours:  TBA
+   Office Hours:  M/W 11a-1p in 314 hinds
 ```
 
 ## Course Description
