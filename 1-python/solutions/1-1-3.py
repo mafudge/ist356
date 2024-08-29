@@ -1,5 +1,10 @@
+#input => Process => output
+
 reading = float(input("Sensor Reading: "))
+
 if reading > 10:
-    print("Opening the door")
+    status = "Opening"
 else:
-    print("Closing the door")
+    status = "Closing"
+
+print(f"{status} the door")
