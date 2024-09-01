@@ -191,7 +191,7 @@ Based on the assignments in this course and our specified learning outcomes, the
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (2.1 to 2.4)
 - Python 1-3: Functions, documentaion, strings, files
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (2.5 to 2.10)
-    - For files / context Managers: [https://realpython.com/python-with-statement(https://realpython.com/python-with-statement)]    
+    - For files / context Managers: [https://realpython.com/python-with-statement](https://realpython.com/python-with-statement)    
 - Python 1-4: Modules, import, pip, testing
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)  (3.1 to 3.2, and 4.1 to 4.4)
 
