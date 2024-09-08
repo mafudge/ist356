@@ -8,7 +8,6 @@ def parsedate_mdy(text: str) -> datetime:
 def formatdate_ymd(date: datetime) -> str:
     return date.strftime("%Y-%m-%d")
 
-
 def test_parsedate_mdy():
     assert parsedate_mdy("12/6/1990") == datetime(1990, 12, 6)
     assert parsedate_mdy("03/06/2020") == datetime(2020, 3, 6)
