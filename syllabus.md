@@ -94,6 +94,13 @@ The assignments are programming / problem solving activities that you will compl
 
 Each Monday we will review the homework assignment. Students will be asked to contribute to the discussion.
 
+Factors affecting your grade:
+
+- Is the code working and correct?
+- Were the instructions followed? (e.g. commit after each function is written)
+- Good reflection: specific, uses terminology, actionable
+- Handed in on time, so your prof only needs to review submissions 1 time.
+
 ### Exams
 
 Exams are summative assessments. They are designed to test your knowledge of the material.  The exams will be issued in class on the dates posted on the course schedule. Exams are closed-book but you may bring one 8.5x11 sheet of paper with your notes on it. Exams length is 60 minutes. They will be a mix of mix of multiple choice, short answer and code tracing and code writing.
