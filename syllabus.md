@@ -171,15 +171,15 @@ Based on the assignments in this course and our specified learning outcomes, the
 | 10 | 10/28 | 10/30 | 11/1 |
 |   | Web APIs 4-3 | Web APIs 4-4 | Assignment 8 (A8) |
 | 11 | 11/4 | 11/6 | 11/8 |
-|   | Data Visualization 5-1 | Data Visualization 5-2 | Assignment 7 (A7) |
+|   | Data Visualization 5-1 | Data Visualization 5-2 | Assignment 9 (A9) |
 | 12 | 11/11 | 11/13 | 11/15 |
-|   | Data Visualization 5-3 | Data Visualization 5-4 | Assignment 9 (A9) |
+|   | Data Visualization 5-3 | Data Visualization 5-4 | Assignment 10 (A10) |
 | 13 | 11/18 | 11/20 | 11/22 |
-|   | Web Scraping 6-1 | Web Scraping 6-2 | Assignment 8 (A8) |
+|   | Web Scraping 6-1 | Web Scraping 6-2 | Assignment 11 (A11) |
 | 14 | 11/25 | 11/27 | 11/29 |
 |   | No Class: Thanksgiving | No Class: Thanksgiving |  |
 | 15 | 12/2 | 12/4 | 12/6 |
-|   | Web Scraping 6-3 | Web Scraping 6-4 | Assignment 10 (A10) |
+|   | Web Scraping 6-3 | Web Scraping 6-4 | Assignment 12 (A12) |
 | 16 | 12/9 | 12/11 | 12/13 |
 |   | Exam 2 (E2) | No Class | No Class  |
 | 17 | 12/16 | 12/18 | 12/20 |
