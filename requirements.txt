@@ -2,3 +2,4 @@ pytest
 streamlit
 ipywidgets
 pillow
+pandas
