@@ -3,3 +3,10 @@ streamlit
 ipywidgets
 pillow
 pandas
+requests
+fastapi[all]
+pytest-playwright
+playwright
+seaborn
+geopandas[all]
+folium
