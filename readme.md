@@ -21,18 +21,14 @@ Course Content Git Repository
 
 If your prof updated the code, here's how you get it in VS Code:
 
-1. Switch to source code control: menu => View => Source Control
-2. Click more actions (the three dots) `...` to the right of SOURCE CONTROL
-3. Select **pull** from the menu.
-
-If the pull does not work, you'll need to use the "rebase" strategy. This strategy pulls contents, then places the current state of your working folder on top of it.
-
-1. From VS Code, open a terminal: meun => Terminal => New Terminal
-2. In the terminal, enter `git pull --rebase`
+1. Open your Terminal in VS Code: menu => Terminal => New Terminal
+2. In the terminal, enter the command: `git fetch --all` to download the latest updates.
+3. Next in the terminal, enter the command: `git reset --hard origin/main` to merge the changes into your local repository and force your working directory to match the update.
+4. Download the pip dependencies: `pip3 install -r requirements.txt`
 
 ### Requirements
 
 The packages necessary to run the code here are found in `requirements.txt` install using `pip` as follows:
 
-1. From VS Code, open a terminal: meun => Terminal => New Terminal
-2. In the terminal, enter `pip install -r requirements.txt`
+1. From VS Code, open a terminal: menu => Terminal => New Terminal
+2. In the terminal, enter `pip3 install -r requirements.txt`
