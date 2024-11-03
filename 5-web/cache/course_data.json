@@ -1,0 +1,26 @@
+[
+  {
+    "course": "IST 256",
+    "title": "Introduction to Python for the Information Profession",
+    "credits": 3,
+    "description": "Computational literacy and learning to code are critical skills of the 21st century. Students are introduced to Python programming language with emphasis on practical applications relevant to everyday lives and common within the information field."
+  },
+  {
+    "course": "IST 387",
+    "title": "Introduction to Applied Data Science",
+    "credits": 3,
+    "description": "Introduces students to fundamentals about data and the standards, technologies, and methods for organizing, managing, curating, preserving, and using data. Discusses broader issues relating to data management, quality control and publication of data."
+  },
+  {
+    "course": "IST 101",
+    "title": "Year Forum",
+    "credits": 1,
+    "description": "Transition to life at the iSchool and Syracuse University, and become more familiar with the information field. Explore the range of possibilities that our undergraduate degree is designed to provide."
+  },
+  {
+    "course": "IST 356",
+    "title": "Programming Techniques for Data Analytics",
+    "credits": 3,
+    "description": "Approaches for building pipelines in data analytics using the Python programming language; data cleaning, extraction, wrangling, API's, web scraping. Building data products. Programming experience required."
+  }
+]
