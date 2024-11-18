@@ -9,4 +9,6 @@ pytest-playwright
 playwright
 seaborn
 geopandas[all]
+mapclassify
 folium
+streamlit-folium
