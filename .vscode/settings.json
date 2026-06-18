@@ -4,5 +4,7 @@
         "1-python/solutions/dateutils.py"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "notebook.lineNumbers": "on",
+    "editor.lineNumbers": "on"
 }

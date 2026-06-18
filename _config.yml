@@ -27,6 +27,10 @@ sphinx:
   config:
     html_js_files:
       - https://cdn.plot.ly/plotly-2.35.2.min.js
+    # Show line numbers on every rendered code block / notebook code cell.
+    html_codeblock_linenos_style: inline
+    # Make notebook (MyST-NB) code cells numbered too, not just markdown code fences.
+    nb_number_source_lines: true
 
 # Files anywhere in the tree to keep out of the published site.
 # (Orphans not in _toc.yml are excluded to keep the build warning-free.)
