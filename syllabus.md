@@ -79,15 +79,18 @@ There is no textbook you need to purchase for this course. All required readings
 
 ### Bring Your Own Device
 
-You are expected to bring your computer to each class session. This class is very hands-on, and you will be programming in class often. 
+You are expected to bring your computer to each class session. This class is very hands-on, and you will be programming in class often using your own device.
 
 #### Software to install
 
-This course requires you to install software on your computer. The intro section of this course provides detailed instructions.
+This course requires you to install software on your computer. At a glance you will need:
 
-- Python 3
-- Visual Studio Code editor
-- Git Source Code Managment
+- Git
+- Visual Studio Code
+- The Dev Containers extension (ms-vscode-remote.remote-containers) for VS Code
+- A container runtime (Docker Desktop, or an alternative like Podman/Rancher Desktop)
+
+🧑‍🏫 [Instructions Provided Here](0-intro/0-0-setup.md)
 
 #### Accounts
 
