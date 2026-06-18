@@ -1,0 +1,44 @@
+# Jupyter Book configuration. See https://jupyterbook.org/customize/config.html
+title: "IST356: Programming Techniques for Data Analytics"
+author: Michael Fudge
+logo: ist356.png
+
+# Do NOT execute notebooks at build time. Many demos require live Streamlit/FastAPI
+# servers or external data, so rendering source as-is is intentional.
+execute:
+  execute_notebooks: "off"
+
+# Render plain Markdown and notebooks alike.
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - linkify
+
+html:
+  use_issues_button: false
+  use_repository_button: true
+
+repository:
+  url: https://github.com/mafudge/ist356
+  branch: main
+
+# Load Plotly.js so interactive charts in the 6-viz notebooks render in static HTML.
+sphinx:
+  config:
+    html_js_files:
+      - https://cdn.plot.ly/plotly-2.35.2.min.js
+
+# Files anywhere in the tree to keep out of the published site.
+# (Orphans not in _toc.yml are excluded to keep the build warning-free.)
+exclude_patterns:
+  - "**/solutions/**"
+  - "dev/**"
+  - "_build/**"
+  - ".pytest_cache/**"
+  - "**/.pytest_cache/**"
+  - "**/__pycache__/**"
+  - "CLAUDE.md"
+  - "TODO.md"
+  - "readme.md"
+  - "0-intro/hello.ipynb"
+  - "3-data/3-1-pandas-practice.ipynb"

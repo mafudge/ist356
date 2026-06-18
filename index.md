@@ -2,11 +2,9 @@
 
 Programming Techniques for Data Analytics
 
+Syracuse University iSchool — Michael Fudge
 
-## Contents
-
-- [Syllabus](syllabus.md)
-- [Setup](./0-intro/0-0-setup.md)
+Use the navigation sidebar to browse the syllabus and course modules, starting with [Setup](./0-intro/0-0-setup.md).
 
 
 

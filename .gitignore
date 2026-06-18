@@ -165,3 +165,5 @@ dev/
 
 #pickle files
 .pkl
+# Jupyter Book build output
+_build/

@@ -1,0 +1,48 @@
+# Table of contents for the Jupyter Book site.
+# See https://jupyterbook.org/customize/toc.html
+format: jb-book
+root: index
+parts:
+  - caption: Course Info
+    chapters:
+      - file: syllabus
+  - caption: 0 - Intro & Setup
+    chapters:
+      - file: 0-intro/0-0-setup
+      - file: 0-intro/0-1-github
+  - caption: 1 - Python
+    chapters:
+      - file: 1-python/1-1-slides
+      - file: 1-python/1-2-slides
+      - file: 1-python/1-3-slides
+      - file: 1-python/1-4-slides
+  - caption: 2 - UI (Streamlit)
+    chapters:
+      - file: 2-ui/2-1-slides
+      - file: 2-ui/2-2-slides
+  - caption: 3 - Data (pandas)
+    chapters:
+      - file: 3-data/3-1-slides
+      - file: 3-data/3-2-slides
+      - file: 3-data/3-3-slides
+      - file: 3-data/3-4-slides
+      - file: 3-data/3-5-slides
+      - file: 3-data/3-6-slides
+  - caption: 4 - APIs (FastAPI)
+    chapters:
+      - file: 4-api/4-1-slides
+      - file: 4-api/4-2-slides
+      - file: 4-api/4-3-slides
+      - file: 4-api/4-4-slides
+  - caption: 5 - Web Scraping
+    chapters:
+      - file: 5-web/5-1-slides
+      - file: 5-web/5-2-slides
+      - file: 5-web/5-3-slides
+      - file: 5-web/5-4-slides
+  - caption: 6 - Visualization
+    chapters:
+      - file: 6-viz/6-1-slides
+      - file: 6-viz/6-2-slides
+      - file: 6-viz/6-3-slides
+      - file: 6-viz/6-4-slides
