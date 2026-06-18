@@ -4,6 +4,8 @@ Course Content Git Repository
 
 - Michael Fudge 
 
+📖 **Course website:** https://mafudge.github.io/ist356
+
 ## Contents:
 
 - Syllabus: `syllabus.md` 
