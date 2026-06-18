@@ -44,6 +44,8 @@ This course is intended as a follow up course to IST256. It is also appropriate 
 - IST256 is for students with little to no programming experience. The course content is 75% python fundamentals and 25% python for data analytics. 
 - IST356 is for students with prior programming experience. The course content is 25% python fundamentals and 75% python for data analytics. 
 
+Are you ready for this course? 🧪 [Take the diagnostic assessment.](diagnostic/index.html)
+
 ### Credits
 
 3 credits
@@ -65,7 +67,7 @@ Upon completion of this course, students will be able to:
 
 ## Textbooks And Supplies
 
-### Textbooks
+### 📖 Textbooks
 
 There is no textbook you need to purchase for this course. All required readings are available freely online, and in many cases, the online sources are the most up-to-date references to the relevant course material. See reading list section for additional details. 
 

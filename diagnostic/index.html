@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E0: Diagnostic Assessment</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --ink: #1f2933;
+    --muted: #647280;
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+    --good: #15803d;
+    --good-bg: #dcfce7;
+    --bad: #b91c1c;
+    --bad-bg: #fee2e2;
+    --border: #d9dee5;
+    --code-bg: #1e293b;
+    --code-ink: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 0 0 14px; }
+  .subtitle { color: var(--muted); margin: 0 0 22px; font-size: 0.95rem; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 18px 0 24px;
+  }
+  .meta-grid .item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .meta-grid .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .meta-grid .value { font-size: 1.15rem; font-weight: 600; margin-top: 2px; }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    padding: 11px 22px;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-primary:disabled { background: #9db5e8; cursor: not-allowed; }
+  .btn-secondary { background: #fff; color: var(--ink); border-color: var(--border); }
+  .btn-secondary:hover { background: var(--bg); }
+
+  .progress-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .progress-bar > div { height: 100%; background: var(--accent); transition: width .25s; }
+
+  .qhead { display: flex; justify-content: space-between; align-items: baseline; color: var(--muted); font-size: 0.9rem; margin-bottom: 10px; }
+  .prompt { font-weight: 500; margin-bottom: 16px; }
+
+  pre.code {
+    background: var(--code-bg);
+    color: var(--code-ink);
+    padding: 18px 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: "SF Mono", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 18px;
+    counter-reset: ln;
+  }
+  pre.code .line { display: block; white-space: pre; }
+  pre.code .line::before {
+    counter-increment: ln;
+    content: counter(ln);
+    display: inline-block;
+    width: 2ch;
+    margin-right: 16px;
+    color: #64748b;
+    text-align: right;
+    user-select: none;
+  }
+  /* Python syntax-highlight tokens (dark code theme) */
+  pre.code .tok-kw      { color: #c792ea; }            /* keywords: if, for, def… */
+  pre.code .tok-builtin { color: #82aaff; }            /* print, len, range… */
+  pre.code .tok-str     { color: #c3e88d; }            /* string literals */
+  pre.code .tok-num     { color: #f78c6c; }            /* numbers */
+  pre.code .tok-comment { color: #637777; font-style: italic; }
+  pre.code .tok-op      { color: #89ddff; }            /* operators / punctuation */
+  pre.code .tok-fn      { color: #82aaff; }            /* name immediately before ( */
+  .output-label { font-family: monospace; color: var(--muted); margin-bottom: 6px; font-size: 0.9rem; }
+
+  .answer-row { display: flex; gap: 10px; align-items: stretch; margin-bottom: 8px; }
+  input[type=text] {
+    flex: 1;
+    font: inherit;
+    font-family: monospace;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fff;
+  }
+  input[type=text]:focus { outline: 2px solid var(--accent); border-color: transparent; }
+  .hint { color: var(--muted); font-size: 0.85rem; margin-bottom: 18px; }
+
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 5px; }
+  .field input { width: 100%; font-family: inherit; }
+  .field-error { color: var(--bad); font-size: 0.82rem; margin: -8px 0 14px; min-height: 1.1em; }
+
+  .nav { display: flex; justify-content: space-between; margin-top: 24px; }
+
+  /* results */
+  .score-big { font-size: 3rem; font-weight: 700; text-align: center; margin: 8px 0 0; }
+  .score-pct { text-align: center; color: var(--muted); margin-bottom: 24px; }
+  .participant { text-align: center; margin: 4px 0 18px; }
+  .participant .p-name { font-weight: 600; font-size: 1.05rem; }
+  .participant .p-email { color: var(--muted); font-size: 0.9rem; }
+  .score-ring { display: block; margin: 10px auto 4px; }
+
+  .review-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .review-item .qid { color: var(--muted); font-size: 0.85rem; margin-bottom: 6px; }
+  .ans-line { display: flex; gap: 8px; align-items: center; margin: 6px 0; font-family: monospace; }
+  .pill { padding: 3px 10px; border-radius: 99px; font-size: 0.85rem; font-family: monospace; }
+  .pill.bad { background: var(--bad-bg); color: var(--bad); }
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .ans-tag { font-family: -apple-system, sans-serif; font-size: 0.8rem; color: var(--muted); width: 110px; flex-shrink: 0; }
+  .explanation { background: var(--bg); border-radius: 9px; padding: 12px 14px; margin-top: 12px; font-size: 0.95rem; }
+  .explanation strong { display:block; margin-bottom: 4px; color: var(--accent-dark); font-size: 0.8rem; text-transform: uppercase; letter-spacing: .04em; }
+
+  .feedback { margin-top: 18px; padding: 12px 16px; border-radius: 9px; font-weight: 500; }
+  .feedback.allgood { background: var(--good-bg); color: var(--good); }
+
+  .center { text-align: center; }
+  .loading, .error { text-align: center; color: var(--muted); padding: 40px 0; }
+  .error { color: var(--bad); }
+  .toggle-img { background: none; border: none; color: var(--accent); padding: 0; font-size: 0.85rem; text-decoration: underline; cursor: pointer; margin-bottom: 14px; }
+  img.code-img { max-width: 100%; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <div class="card"><div class="loading">Loading diagnostic…</div></div>
+</div>
+
+<script>
+const DATA_URL = "diagnostic-assessment.json";
+const app = document.getElementById("app");
+
+let assessment = null;   // metadata
+let questions = [];      // ordered list of questions for this attempt
+let answers = [];        // student's typed answer per question index
+let current = 0;         // current question index
+let participant = { name: "", email: "" };  // collected on the cover page
+
+// --- answer matching ----------------------------------------------------
+// Answers are short tokens entered without quotes. Treat the comparison as
+// case-sensitive on content but tolerant of surrounding whitespace, since a
+// stray leading/trailing space shouldn't count against a correct token.
+function isCorrect(question, given) {
+  if (given == null) return false;
+  const a = String(question.answer).trim();
+  const g = String(given).trim();
+  return a === g;
+}
+
+// --- rendering helpers ---------------------------------------------------
+function el(html) {
+  const t = document.createElement("template");
+  t.innerHTML = html.trim();
+  return t.content.firstElementChild;
+}
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+// --- Python syntax highlighting -----------------------------------------
+// Small dependency-free tokenizer. Good enough for the short snippets in this
+// diagnostic; it is intentionally simple, not a full Python lexer.
+const PY_KEYWORDS = new Set([
+  "False","None","True","and","as","assert","async","await","break","class",
+  "continue","def","del","elif","else","except","finally","for","from","global",
+  "if","import","in","is","lambda","nonlocal","not","or","pass","raise","return",
+  "try","while","with","yield","match","case"
+]);
+const PY_BUILTINS = new Set([
+  "print","len","range","int","str","float","bool","list","dict","set","tuple",
+  "input","abs","min","max","sum","sorted","reversed","enumerate","zip","map",
+  "filter","type","round","open","format","repr","ord","chr","isinstance"
+]);
+
+function highlightPython(src) {
+  const s = String(src);
+  let out = "";
+  let i = 0;
+  const n = s.length;
+  const wrap = (cls, text) => `<span class="tok-${cls}">${escapeHtml(text)}</span>`;
+
+  while (i < n) {
+    const ch = s[i];
+
+    // comments: # to end of line
+    if (ch === "#") {
+      let j = i;
+      while (j < n && s[j] !== "\n") j++;
+      out += wrap("comment", s.slice(i, j));
+      i = j;
+      continue;
+    }
+
+    // strings: ''' """ ' " with optional prefix (r, f, b, etc.)
+    const prefixMatch = /^[rbfuRBFU]{0,2}('''|"""|'|")/.exec(s.slice(i));
+    if (prefixMatch) {
+      const prefix = prefixMatch[0].slice(0, prefixMatch[0].length - prefixMatch[1].length);
+      const quote = prefixMatch[1];
+      let j = i + prefix.length + quote.length;
+      while (j < n) {
+        if (s[j] === "\\") { j += 2; continue; }            // skip escapes
+        if (s.startsWith(quote, j)) { j += quote.length; break; }
+        j++;
+      }
+      out += wrap("str", s.slice(i, j));
+      i = j;
+      continue;
+    }
+
+    // numbers (int / float, incl. hex/bin/octal prefixes)
+    if (/[0-9]/.test(ch) || (ch === "." && /[0-9]/.test(s[i + 1] || ""))) {
+      let j = i;
+      while (j < n && /[0-9a-fA-FxXoObB_.eE+\-]/.test(s[j])) {
+        // stop a stray + / - that isn't part of an exponent
+        if ((s[j] === "+" || s[j] === "-") && !/[eE]/.test(s[j - 1])) break;
+        j++;
+      }
+      out += wrap("num", s.slice(i, j));
+      i = j;
+      continue;
+    }
+
+    // identifiers / keywords / builtins / function-call names
+    if (/[A-Za-z_]/.test(ch)) {
+      let j = i;
+      while (j < n && /[A-Za-z0-9_]/.test(s[j])) j++;
+      const word = s.slice(i, j);
+      // look past spaces to see if a "(" follows -> call site
+      let k = j;
+      while (k < n && (s[k] === " " || s[k] === "\t")) k++;
+      if (PY_KEYWORDS.has(word)) out += wrap("kw", word);
+      else if (PY_BUILTINS.has(word)) out += wrap("builtin", word);
+      else if (s[k] === "(") out += wrap("fn", word);
+      else out += escapeHtml(word);
+      i = j;
+      continue;
+    }
+
+    // operators / punctuation
+    if (/[+\-*/%=<>!&|^~@:,.()\[\]{};]/.test(ch)) {
+      out += wrap("op", ch);
+      i++;
+      continue;
+    }
+
+    // whitespace / anything else passes through (escaped)
+    out += escapeHtml(ch);
+    i++;
+  }
+  return out;
+}
+
+// Render code with one <span class="line"> per source line so CSS can show
+// line numbers (mirrors the repo's "show line numbers in code blocks" setup).
+// Each line is independently syntax-highlighted.
+function renderCode(code) {
+  return String(code).split("\n")
+    .map(line => `<span class="line">${highlightPython(line) || "&nbsp;"}</span>`)
+    .join("");
+}
+
+// --- screens -------------------------------------------------------------
+function renderCover() {
+  app.innerHTML = "";
+  const card = el(`<div class="card"></div>`);
+  card.innerHTML = `
+    <h1>${escapeHtml(assessment.title)}</h1>
+    <p class="subtitle">${escapeHtml(assessment.course)}</p>
+    <p>${escapeHtml(assessment.description)}</p>
+    <div class="meta-grid">
+      <div class="item"><div class="label">Questions</div><div class="value">${questions.length}</div></div>
+      <div class="item"><div class="label">Suggested time</div><div class="value">${assessment.time_limit_minutes} min</div></div>
+      <div class="item"><div class="label">Format</div><div class="value">Fill in the blank</div></div>
+    </div>
+    <p><strong>What to expect</strong></p>
+    <ul>
+      <li>You'll see short Python code snippets, <strong>one question at a time</strong>.</li>
+      <li>For each, type <em>exactly</em> what the code prints — no quotation marks, no extra spaces.</li>
+      <li>You can move <strong>back and forward</strong> to revise answers before finishing.</li>
+      <li>When you're done you'll get a <strong>score</strong> and can <strong>review every question you missed</strong> with the correct answer and an explanation.</li>
+    </ul>
+    <p class="hint">This is a self-check. Nothing is submitted anywhere — your results stay in your browser.</p>
+    <p><strong>Before you begin, tell us who you are.</strong></p>
+    <div class="field">
+      <label for="p-name">Name</label>
+      <input type="text" id="p-name" autocomplete="name" placeholder="Your full name"
+             value="${escapeHtml(participant.name)}">
+    </div>
+    <div class="field">
+      <label for="p-email">Email</label>
+      <input type="email" id="p-email" autocomplete="email" placeholder="you@example.com"
+             value="${escapeHtml(participant.email)}">
+    </div>
+    <div class="field-error" id="p-error"></div>
+    <div class="center">
+      <button class="btn-primary" id="start-btn">Start the diagnostic</button>
+    </div>
+  `;
+  app.appendChild(card);
+
+  const nameInput = document.getElementById("p-name");
+  const emailInput = document.getElementById("p-email");
+  const errorBox = document.getElementById("p-error");
+
+  function tryStart() {
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    if (!name) { errorBox.textContent = "Please enter your name."; nameInput.focus(); return; }
+    // Simple, permissive email sanity check: something@something.something
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorBox.textContent = "Please enter a valid email address.";
+      emailInput.focus();
+      return;
+    }
+    participant = { name, email };
+    current = 0;
+    renderQuestion();
+  }
+
+  document.getElementById("start-btn").addEventListener("click", tryStart);
+  // Enter in either field starts the diagnostic.
+  [nameInput, emailInput].forEach(inp =>
+    inp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); tryStart(); } })
+  );
+  nameInput.focus();
+}
+
+function renderQuestion() {
+  app.innerHTML = "";
+  const q = questions[current];
+  const total = questions.length;
+  const pct = Math.round((current) / total * 100);
+
+  const card = el(`<div class="card"></div>`);
+  card.innerHTML = `
+    <div class="progress-bar"><div style="width:${pct}%"></div></div>
+    <div class="qhead">
+      <span>Question ${current + 1} of ${total}</span>
+      <span>${escapeHtml(q.id)}</span>
+    </div>
+    <div class="prompt">${escapeHtml(q.prompt)}</div>
+    <pre class="code">${renderCode(q.code)}</pre>
+    <button class="toggle-img" id="toggle-img" type="button">Show as image</button>
+    <div class="output-label">${escapeHtml(q.output_label || "OUTPUT:")}</div>
+    <div class="answer-row">
+      <input type="text" id="answer" autocomplete="off" autocapitalize="off"
+             spellcheck="false" placeholder="Type the output…"
+             value="${escapeHtml(answers[current] || "")}">
+    </div>
+    <div class="hint">Enter only the output, exactly as it appears — no quotation marks.</div>
+    <div class="nav">
+      <button class="btn-secondary" id="prev-btn" ${current === 0 ? "disabled" : ""}>← Back</button>
+      <button class="btn-primary" id="next-btn">${current === total - 1 ? "Finish & see score" : "Next →"}</button>
+    </div>
+  `;
+  app.appendChild(card);
+
+  const input = document.getElementById("answer");
+  input.focus();
+  input.setSelectionRange(input.value.length, input.value.length);
+
+  const save = () => { answers[current] = input.value; };
+  input.addEventListener("input", save);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { e.preventDefault(); save(); goNext(); }
+  });
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    save();
+    if (current > 0) { current--; renderQuestion(); }
+  });
+  document.getElementById("next-btn").addEventListener("click", () => { save(); goNext(); });
+
+  // Optional: reveal the original code image for students who prefer it.
+  const toggle = document.getElementById("toggle-img");
+  toggle.addEventListener("click", () => {
+    const existing = card.querySelector("img.code-img");
+    if (existing) { existing.remove(); toggle.textContent = "Show as image"; return; }
+    if (!q.code_image_base64) { toggle.textContent = "(no image available)"; return; }
+    const img = el(`<img class="code-img" alt="Code snippet for ${escapeHtml(q.id)}">`);
+    img.src = q.code_image_base64;
+    card.querySelector("pre.code").after(img);
+    toggle.textContent = "Hide image";
+  });
+}
+
+function goNext() {
+  if (current < questions.length - 1) {
+    current++;
+    renderQuestion();
+  } else {
+    renderResults();
+  }
+}
+
+function renderResults() {
+  app.innerHTML = "";
+  const total = questions.length;
+  const wrong = [];
+  let score = 0;
+  questions.forEach((q, i) => {
+    if (isCorrect(q, answers[i])) score++;
+    else wrong.push({ q, given: answers[i], index: i });
+  });
+  const pct = Math.round(score / total * 100);
+
+  // circular score ring
+  const r = 52, c = 2 * Math.PI * r;
+  const dash = (score / total) * c;
+  const ringColor = pct >= 70 ? "var(--good)" : pct >= 50 ? "var(--accent)" : "var(--bad)";
+
+  const card = el(`<div class="card"></div>`);
+  card.innerHTML = `
+    <h1 class="center">Diagnostic complete</h1>
+    <div class="participant">
+      <div class="p-name">${escapeHtml(participant.name)}</div>
+      <div class="p-email">${escapeHtml(participant.email)}</div>
+    </div>
+    <svg class="score-ring" width="140" height="140" viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--border)" stroke-width="12"/>
+      <circle cx="70" cy="70" r="${r}" fill="none" stroke="${ringColor}" stroke-width="12"
+        stroke-linecap="round" stroke-dasharray="${dash} ${c}"
+        transform="rotate(-90 70 70)"/>
+      <text x="70" y="78" text-anchor="middle" font-size="30" font-weight="700" fill="var(--ink)">${pct}%</text>
+    </svg>
+    <p class="score-pct">You answered <strong>${score}</strong> of <strong>${total}</strong> correctly.</p>
+    <div id="review-area"></div>
+    <div class="nav">
+      <button class="btn-secondary" id="restart-btn">Retake diagnostic</button>
+    </div>
+  `;
+  app.appendChild(card);
+
+  const reviewArea = document.getElementById("review-area");
+  if (wrong.length === 0) {
+    reviewArea.appendChild(el(`<div class="feedback allgood">🎉 Perfect score — nothing to review. Nice work!</div>`));
+  } else {
+    reviewArea.appendChild(el(`<h2>Review the ${wrong.length} question${wrong.length === 1 ? "" : "s"} you missed</h2>`));
+    wrong.forEach(({ q, given }) => {
+      const item = el(`<div class="review-item"></div>`);
+      const givenDisplay = (given && given.trim() !== "") ? escapeHtml(given) : "(left blank)";
+      item.innerHTML = `
+        <div class="qid">${escapeHtml(q.id)} — ${escapeHtml(q.prompt)}</div>
+        <pre class="code">${renderCode(q.code)}</pre>
+        <div class="ans-line"><span class="ans-tag">Your answer</span><span class="pill bad">${givenDisplay}</span></div>
+        <div class="ans-line"><span class="ans-tag">Correct answer</span><span class="pill good">${escapeHtml(q.answer)}</span></div>
+        <div class="explanation"><strong>Explanation</strong>${escapeHtml(q.explanation)}</div>
+      `;
+      reviewArea.appendChild(item);
+    });
+  }
+
+  document.getElementById("restart-btn").addEventListener("click", startAttempt);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// --- bootstrap -----------------------------------------------------------
+function startAttempt() {
+  // Deliver in fixed source order (Q01 → Q20).
+  questions = assessment.questions.slice();
+  answers = new Array(questions.length).fill("");
+  current = 0;
+  renderCover();
+}
+
+// `cache: "no-store"` so editing the JSON and refreshing always loads the
+// latest copy — no hard-reload needed.
+fetch(DATA_URL, { cache: "no-store" })
+  .then(r => {
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return r.json();
+  })
+  .then(data => {
+    assessment = data.assessment;
+    assessment.questions = data.questions;
+    if (assessment.title) document.title = assessment.title;  // reflect JSON title in the browser tab
+    startAttempt();
+  })
+  .catch(err => {
+    app.innerHTML = `<div class="card"><div class="error">
+      Could not load <code>${DATA_URL}</code>.<br><br>
+      ${escapeHtml(err.message)}<br><br>
+      Serve this folder over HTTP (e.g. <code>python3 -m http.server</code>) and open
+      <code>index.html</code> from there — opening the file directly with <code>file://</code>
+      blocks the fetch.
+    </div></div>`;
+  });
+</script>
+</body>
+</html>
