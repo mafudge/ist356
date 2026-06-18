@@ -31,6 +31,12 @@ sphinx:
     html_codeblock_linenos_style: inline
     # Make notebook (MyST-NB) code cells numbered too, not just markdown code fences.
     nb_number_source_lines: true
+    # Copy standalone web assets into the built site verbatim. Sphinx copies the
+    # CONTENTS of each listed dir to the site root, so _extra/diagnostic/ lands at
+    # /diagnostic/ — served and rendered by Pages, not parsed as a book page. This
+    # is what makes the syllabus link to diagnostic/index.html resolve on the site.
+    html_extra_path:
+      - _extra
 
 # Files anywhere in the tree to keep out of the published site.
 # (Orphans not in _toc.yml are excluded to keep the build warning-free.)
@@ -38,6 +44,8 @@ exclude_patterns:
   - "**/solutions/**"
   - "dev/**"
   - "_build/**"
+  # Served verbatim via html_extra_path above, not parsed as book content.
+  - "_extra/**"
   - ".pytest_cache/**"
   - "**/.pytest_cache/**"
   - "**/__pycache__/**"
