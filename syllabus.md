@@ -132,8 +132,8 @@ The project is your opportunity to demonstrate what you have learned in an exper
 
 | Assessment | Type | Learning Outcomes | Quantity | Points Each | Points Total |
 |------------|------|-------------------|----------|-------------|--------------|
-| Assignments | Formative | 1, 2 | 10 | 3 | 30 |
-| Exams | Summative | 3, 4 | 2 | 25 | 50 |
+| Assignments | Formative | 1, 2 | 8 | 4 | 32 |
+| Exams | Summative | 3, 4 | 2 | 24 | 48 |
 | Project | Summative | 5 | 1 | 20 | 20 |
 | **Total** | | | | | **100** |
 
@@ -167,35 +167,35 @@ Based on the assignments in this course and our specified learning outcomes, the
 | 1 | 8/25 | 8/27 | 8/28 |
 |   | Course Introduction | Python 1-1 |  |
 | 2 | 9/1 | 9/3 | 9/4 |
-|   | Python 1-2 | Python 1-3 | Assignment 1 (A1) |
+|   | Python 1-2 | Python 1-3 | Assignment 1 (A1) — Submission Practice |
 | 3 | 9/8 | 9/10 | 9/11 |
-|   | Python 1-4 | UI 2-1 | Assignment 2 (A2) |
+|   | Python 1-4 | UI 2-1 |  |
 | 4 | 9/15 | 9/17 | 9/18 |
-|   | UI 2-2 | Data Wrangling 3-1 | Assignment 3 (A3) |
+|   | UI 2-2 | Data Wrangling 3-1 | Assignment 2 (A2) — Python |
 | 5 | 9/22 | 9/24 | 9/25 |
-|   | Data Wrangling 3-2 | Data Wrangling 3-3 | Assignment 4 (A4) |
+|   | Data Wrangling 3-2 | Data Wrangling 3-3 | Assignment 3 (A3) — UI/Streamlit |
 | 6 | 9/29 | 10/1 | 10/2 |
-|   | Data Wrangling 3-4 | Data Wrangling 3-5 | Assignment 5 (A5) |
+|   | Data Wrangling 3-4 | Data Wrangling 3-5 |  |
 | 7 | 10/6 | 10/8 | 10/9 |
-|   | Data Wrangling 3-6 | Exam 1 Review | Assignment 6 (A6) |
+|   | Data Wrangling 3-6 | Exam 1 Review | Assignment 4 (A4) — Data Wrangling 1 |
 | 8 | 10/13 | 10/15 | 10/16 |
-|   | No Class: Fall Break | Exam 1 (E1) |  |
+|   | No Class: Fall Break | Exam 1 (E1) | Assignment 5 (A5) — Data Wrangling 2 |
 | 9 | 10/20 | 10/22 | 10/23 |
-|   | Web APIs 4-1 | Web APIs 4-2 | Assignment 7 (A7) |
+|   | Web APIs 4-1 | Web APIs 4-2 |  |
 | 10 | 10/27 | 10/29 | 10/30 |
-|   | Web APIs 4-3 | Web APIs 4-4 | Assignment 8 (A8) |
+|   | Web APIs 4-3 | Web APIs 4-4 |  |
 | 11 | 11/3 | 11/5 | 11/6 |
-|    | Web Scraping 5-1 | Web Scraping 5-2 | Assignment 9 (A9) |
+|    | Web Scraping 5-1 | Web Scraping 5-2 | Assignment 6 (A6) — Web APIs |
 | 12 | 11/10 | 11/12 | 11/13 |
-|   | Web Scraping 5-3 | Web Scraping 5-4 | Assignment 10 (A10) |
+|   | Web Scraping 5-3 | Web Scraping 5-4 |  |
 | 13 | 11/17 | 11/19 | 11/20 |
-|   | Data Visualization 6-1 | Data Visualization 6-2 | Assignment 11 (A11) |
+|   | Data Visualization 6-1 | Data Visualization 6-2 | Assignment 7 (A7) — Web Scraping |
 | 14 | 11/24 | 11/26 |  |
 |   | No Class: Thanksgiving | No Class: Thanksgiving |  |
 | 15 | 12/1 | 12/3 | 12/4 |
-|   | Data Visualization 6-3 | Data Visualization 6-4 | Assignment 12 (A12) |
-| 16 | 12/8 | 12/10 |  |
-|   | Exam 2 (E2) — Last Day of Classes | No Class: Final Exam Period |  |
+|   | Data Visualization 6-3 | Data Visualization 6-4 |  |
+| 16 | 12/8 | 12/10 | 12/11 |
+|   | Exam 2 (E2) — Last Day of Classes | No Class: Final Exam Period | Assignment 8 (A8) — Data Visualization |
 | Finals | 12/10 - 12/15 |  |  |
 |   | Project Due (P) — see registrar final exam schedule |  |  |
 
