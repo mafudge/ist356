@@ -1,44 +1,53 @@
 # Dev Container Prerequisites — Installation Guide
 
-Everything you need to clone a Git repo and run it in a VS Code Dev Container, with command-line install steps for **Windows**, **macOS**, and **Ubuntu**.
+Everything you need to clone a Git repo and run it in a VS Code Dev Container, with command-line install steps for **Windows**, **macOS**, and **Ubuntu**. This is software you will need to install to work on code in this course.
 
 ## What gets installed
 
 On every platform you end up with the same four things:
 
-- **Git** — to clone the repo
-- **Visual Studio Code** — the editor
-- **Dev Containers extension** (`ms-vscode-remote.remote-containers`) — drives the container workflow
-- **A container runtime** — Docker Desktop (Windows/macOS) or Docker Engine (Ubuntu)
+- **Git** — to clone the repo, commit your changes, and share to Github.
+- **Visual Studio Code** — the integrated development environment: editor, debugger
+- **Dev Containers extension** (`ms-vscode-remote.remote-containers`) — drives the container workflow. runs your code in isolation on your computer
+- **A container runtime** — Docker Desktop (Windows/macOS) or Docker Engine (Ubuntu). This isolates the code.
+
+### Installing
+
+You can install the pre-requisites using a script or run the commands manually yourself.
+
+1. If you want to use the script, see **Script Setup**
+2. To type the command yourself, see **Manual Setup**
 
 ---
 
-## Quick start — run the script remotely
+## Script Setup
 
-If you host these scripts at a URL (e.g. a GitHub raw link), you can run each one in a single command without downloading it first. Replace `<BASE_URL>` with wherever you host them — for a GitHub repo this looks like `https://raw.githubusercontent.com/<user>/<repo>/main`.
+If you don't want to run the commands manually, you can try these automated scripts. You will download code and it will attempt to setup automatically. 
 
-**Windows** (PowerShell as Administrator):
+**NOTE:** if they don't work try the manual setup.
+
+**Windows** (Open PowerShell as Administrator):
 
 ```powershell
-irm <BASE_URL>/windows.ps1 | iex
+irm https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/windows.ps1 | iex
 ```
 
-**macOS** (Terminal):
+**macOS** (Open a Terminal):
 
 ```bash
-curl -fsSL <BASE_URL>/macos.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/macos.sh | bash
 ```
 
-**Ubuntu** (Terminal):
+**Ubuntu** (Open a Terminal):
 
 ```bash
-curl -fsSL <BASE_URL>/ubuntu.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/ubuntu.sh | bash
 ```
 
 > **Safety note:** piping a remote script straight into a shell runs whatever the URL returns. Only do this with a source you control or trust, and prefer pinning to a specific commit/tag rather than `main` so the content can't change underneath you. If you'd rather inspect first, download and review before running:
 >
 > ```bash
-> curl -fsSL <BASE_URL>/install-prereqs-ubuntu.sh -o install-prereqs-ubuntu.sh
+> curl -fsSL https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/install-prereqs-ubuntu.sh -o install-prereqs-ubuntu.sh
 > less install-prereqs-ubuntu.sh   # review
 > chmod +x install-prereqs-ubuntu.sh && ./install-prereqs-ubuntu.sh
 > ```
@@ -47,7 +56,9 @@ curl -fsSL <BASE_URL>/ubuntu.sh | bash
 
 ---
 
-## Windows
+## Manual Setup
+
+### Windows
 
 Run in **PowerShell as Administrator**. Windows 10/11 includes `winget`.
 
@@ -78,7 +89,7 @@ code --install-extension ms-vscode-remote.remote-containers
 
 ---
 
-## macOS
+### macOS
 
 Run in **Terminal**. Uses [Homebrew](https://brew.sh).
 
@@ -106,7 +117,7 @@ code --install-extension ms-vscode-remote.remote-containers
 
 ---
 
-## Ubuntu
+### Ubuntu Linux
 
 Run in **Terminal**. Installs Docker Engine natively (no Docker Desktop needed).
 
@@ -145,5 +156,8 @@ On any platform, confirm the runtime is up before opening a dev container:
 ```bash
 docker run hello-world
 ```
+
+ TODO: 
+
 
 Then in VS Code: clone the repo → **Reopen in Container** when prompted (or run **Dev Containers: Clone Repository in Container Volume** from the command palette). VS Code reads `.devcontainer/devcontainer.json` and builds the container automatically.
