@@ -1,0 +1,7 @@
+# Documentation site build (Jupyter Book -> GitHub Pages).
+# Kept separate from requirements.txt so students aren't forced to install the toolchain.
+#
+# Pinned to the classic v1 line: pure-Python (no Node.js), and it uses the
+# _config.yml + _toc.yml in this repo. Jupyter Book v2 is a different tool
+# (mystmd-based, requires Node, uses myst.yml) and is NOT compatible with this setup.
+jupyter-book<2
