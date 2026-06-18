@@ -1,12 +1,21 @@
 # IST356: Programming Techniques for Data Analytics
 
 ```
-   Room: Hinds 111
-   Time: M/W 2:15p - 3:35p
+  🗓️ Term: Fall 2026 
 
-   Instructor:  Michael Fudge
-   Email: mafudge@syr.edu
-   Office Hours:  M/W 11a-1p in 314 hinds
+  🏛️ Room: Hinds Hall 111
+
+  📋Sections:
+
+  IST 356 M001 (15927):  Tu/Th  9:30a - 10:50a
+  IST 356 M002 (15956):  Tu/Th  2:00p - 3:20p
+
+
+  👨 Professor: Michael Fudge
+  ✉️ Email: mafudge@syr.edu
+  🕰️ Office Hours:  TBA
+  
+
 ```
 
 ## Course Description
@@ -148,42 +157,42 @@ Based on the assignments in this course and our specified learning outcomes, the
 
 ## Class Schedule
 
-| Week | Monday Class | Wednesday Class | Friday Assignment Due|
+| Week | Tuesday Class | Thursday Class | Friday Assignment Due |
 |-----|-----|-----|-----|
-| 1 | 8/26 | 8/28 | 8/30 |
+| 1 | 8/25 | 8/27 | 8/28 |
 |   | Course Introduction | Python 1-1 |  |
-| 2 | 9/2 | 9/4 | 9/6 |
-|   | No Class: Labor Day | Python 1-2 | Assignment 1 (A1) |
-| 3 | 9/9 | 9/11 | 9/13 |
-|   | Python 1-3 | Python 1-4 | Assignment 2 (A2) |
-| 4 | 9/16 | 9/18 | 9/20 |
-|   | UI 2.1 | UI 2.2 | Assignment 3 (A3) |
-| 5 | 9/23 | 9/37 | 9/27 |
-|   | Data Wrangling 3-1 | Data Wrangling 3-2 | Assignment 4 (A4) |
-| 6 | 9/30 | 10/2 | 10/4 |
-|   | Data Wrangling 3-3 | Data Wrangling 3-4 | Assignment 5 (A5) |
-| 7 | 10/7 | 10/9 | 10/11 |
-|   | Data Wrangling 3-5 | Data Wrangling 3-6 | Assignment 6 (A6) |
-| 8 | 10/14 | 10/16 | 10/18 |
-|   |  No Class: Fall Break | Exam 1 (E1) |  |
-| 9 | 10/21 | 10/23 | 10/25 |
+| 2 | 9/1 | 9/3 | 9/4 |
+|   | Python 1-2 | Python 1-3 | Assignment 1 (A1) |
+| 3 | 9/8 | 9/10 | 9/11 |
+|   | Python 1-4 | UI 2-1 | Assignment 2 (A2) |
+| 4 | 9/15 | 9/17 | 9/18 |
+|   | UI 2-2 | Data Wrangling 3-1 | Assignment 3 (A3) |
+| 5 | 9/22 | 9/24 | 9/25 |
+|   | Data Wrangling 3-2 | Data Wrangling 3-3 | Assignment 4 (A4) |
+| 6 | 9/29 | 10/1 | 10/2 |
+|   | Data Wrangling 3-4 | Data Wrangling 3-5 | Assignment 5 (A5) |
+| 7 | 10/6 | 10/8 | 10/9 |
+|   | Data Wrangling 3-6 | Exam 1 Review | Assignment 6 (A6) |
+| 8 | 10/13 | 10/15 | 10/16 |
+|   | No Class: Fall Break | Exam 1 (E1) |  |
+| 9 | 10/20 | 10/22 | 10/23 |
 |   | Web APIs 4-1 | Web APIs 4-2 | Assignment 7 (A7) |
-| 10 | 10/28 | 10/30 | 11/1 |
+| 10 | 10/27 | 10/29 | 10/30 |
 |   | Web APIs 4-3 | Web APIs 4-4 | Assignment 8 (A8) |
-| 11 | 11/4 | 11/6 | 11/8 |
+| 11 | 11/3 | 11/5 | 11/6 |
 |    | Web Scraping 5-1 | Web Scraping 5-2 | Assignment 9 (A9) |
-| 12 | 11/11 | 11/13 | 11/15 |
+| 12 | 11/10 | 11/12 | 11/13 |
 |   | Web Scraping 5-3 | Web Scraping 5-4 | Assignment 10 (A10) |
-| 13 | 11/18 | 11/20 | 11/22 |
-|   | Data Visualization 6-1 | Data Visualization 6-2  | Assignment 11 (A11) |
-| 14 | 11/25 | 11/27 | 11/29 |
+| 13 | 11/17 | 11/19 | 11/20 |
+|   | Data Visualization 6-1 | Data Visualization 6-2 | Assignment 11 (A11) |
+| 14 | 11/24 | 11/26 |  |
 |   | No Class: Thanksgiving | No Class: Thanksgiving |  |
-| 15 | 12/2 | 12/4 | 12/6 |
+| 15 | 12/1 | 12/3 | 12/4 |
 |   | Data Visualization 6-3 | Data Visualization 6-4 | Assignment 12 (A12) |
-| 16 | 12/9 | 12/11 | 12/13 |
-|   | Exam 2 (E2) | No Class | No Class  |
-| 17 | 12/16 | 12/18 | 12/20 |
-|   | Project Due (P) | Semester Over  |  Semester Over |
+| 16 | 12/8 | 12/10 |  |
+|   | Exam 2 (E2) — Last Day of Classes | No Class: Final Exam Period |  |
+| Finals | 12/10 - 12/15 |  |  |
+|   | Project Due (P) — see registrar final exam schedule |  |  |
 
 
 ## Reading List
