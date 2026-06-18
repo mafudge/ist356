@@ -44,7 +44,7 @@ This course is intended as a follow up course to IST256. It is also appropriate 
 - IST256 is for students with little to no programming experience. The course content is 75% python fundamentals and 25% python for data analytics. 
 - IST356 is for students with prior programming experience. The course content is 25% python fundamentals and 75% python for data analytics. 
 
-Are you ready for this course? 🧪 [Take the diagnostic assessment.](diagnostic/index.html)
+Are you ready for this course? 🧪 <a href="diagnostic/index.html">Take the diagnostic assessment.</a>
 
 ### Credits
 
