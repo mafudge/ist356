@@ -158,7 +158,7 @@ The following grading scale translates your total points earned into a letter gr
 
 ### Use of AI in this Course
 
-Based on the assignments in this course and our specified learning outcomes, the full use of artificial intelligence as a tool, with disclosure and citation, is permitted in this course. Students do not need to ask permission to use these tools before starting an assignment or exam, but they must explicitly and fully indicate which tools were used and describe how they were used.
+Based on the assignments in this course and our specified learning outcomes, the full use of artificial intelligence (AI) as a tool, with disclosure and citation, is permitted in this course. Students do not need to ask permission to use these tools before starting an assignment, but they must explicitly and fully indicate which tools were used and describe how they were used. Exams are issued in class with the understanding that AI will not be permitted.
 
 ## Class Schedule
 
