@@ -9,7 +9,9 @@ parts:
   - caption: 0 - Intro & Setup
     chapters:
       - file: 0-intro/0-0-setup
-      - file: 0-intro/0-1-github
+      - file: 0-intro/0-1-install-pre-reqs
+      - file: 0-intro/0-2-course-repo-walkthrough
+      - file: 0-intro/0-3-github
   - caption: 1 - Python
     chapters:
       - file: 1-python/1-1-slides
