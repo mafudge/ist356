@@ -88,13 +88,14 @@ This course requires you to install software on your computer. At a glance you w
 - Git
 - Visual Studio Code
 - The Dev Containers extension (ms-vscode-remote.remote-containers) for VS Code
-- A container runtime (Docker Desktop, or an alternative like Podman/Rancher Desktop)
+- A container runtime (Docker Desktop)
 
 🧑‍🏫 [Instructions Provided Here](0-intro/0-0-setup.md)
 
 #### Accounts
 
 - We will use Github for assignment submission. 
+- Sign up for the Student Developer Pack [https://education.github.com/pack](https://education.github.com/pack)
 
 ## Course Requirements and Expectations
 

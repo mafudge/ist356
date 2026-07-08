@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    image: mafudge/ist356:latest
+    volumes:
+      - ..:/workspace:cached
+    ports:
+      - "18888:8888" # jupyter
+      - "18501:8501" # streamlit
+      - "18000:8000" # fastapi
+    command: sleep infinity

@@ -151,13 +151,10 @@ code --install-extension ms-vscode-remote.remote-containers
 
 ## Verify everything works
 
-On any platform, confirm the runtime is up before opening a dev container:
+On any platform, confirm the Docker runtime works.
 
 ```bash
 docker run hello-world
 ```
 
- TODO: 
-
-
-Then in VS Code: clone the repo → **Reopen in Container** when prompted (or run **Dev Containers: Clone Repository in Container Volume** from the command palette). VS Code reads `.devcontainer/devcontainer.json` and builds the container automatically.
+After that you can continue with the [Course Setup](0-0-setup.md)
