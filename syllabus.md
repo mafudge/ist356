@@ -172,7 +172,7 @@ Based on the assignments in this course and our specified learning outcomes, the
 | 7 | 10/6 | 10/8 | 10/9 |
 |   | Data Wrangling 3-6 | Exam 1 Review | Assignment 4 (A4) — Data Wrangling 1 |
 | 8 | 10/13 | 10/15 | 10/16 |
-|   | No Class: Fall Break | Exam 1 (E1) | Assignment 5 (A5) — Data Wrangling 2 |
+|   | No Class: Fall Break | Exam 1 (E1) — 50 pts | Assignment 5 (A5) — Data Wrangling 2 |
 | 9 | 10/20 | 10/22 | 10/23 |
 |   | Web APIs 4-1 | Web APIs 4-2 |  |
 | 10 | 10/27 | 10/29 | 10/30 |
@@ -188,7 +188,7 @@ Based on the assignments in this course and our specified learning outcomes, the
 | 15 | 12/1 | 12/3 | 12/4 |
 |   | Data Visualization 6-3 | Data Visualization 6-4 |  |
 | 16 | 12/8 | 12/10 | 12/11 |
-|   | Exam 2 (E2) — Last Day of Classes | No Class: Final Exam Period | Assignment 8 (A8) — Data Visualization |
+|   | Exam 2 (E2) — 50 pts, Last Day of Classes | No Class: Final Exam Period | Assignment 8 (A8) — Data Visualization |
 | Finals | 12/10 - 12/15 |  |  |
 |   | Project Due (P) — see registrar final exam schedule |  |  |
 
