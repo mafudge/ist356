@@ -81,27 +81,19 @@ There is no textbook you need to purchase for this course. All required readings
 
 You are expected to bring your computer to each class session. This class is very hands-on, and you will be programming in class often using your own device.
 
-#### Software to install
+#### Software to install and Github
 
-This course requires you to install software on your computer. At a glance you will need:
+This course requires you to install software on your computer, or use a cloud computer from your Github account. Instructions are provided here:
 
-- Git
-- Visual Studio Code
-- The Dev Containers extension (ms-vscode-remote.remote-containers) for VS Code
-- A container runtime (Docker Desktop)
+🧑‍🏫 [IST356 Course Setup](0-intro/0-0-setup.md)
 
-🧑‍🏫 [Instructions Provided Here](0-intro/0-0-setup.md)
-
-#### Accounts
-
-- We will use Github for assignment submission. 
-- Sign up for the Student Developer Pack [https://education.github.com/pack](https://education.github.com/pack)
+> **Please complete the course setup ASAP. The expectation is you will be ready to code on the first day of class.**
 
 ## Course Requirements and Expectations
 
 ### Attendance and Participation
 
-You are expected to attend and participate in every class session. If you must miss class, you are responsible for making up the work and catching up on what you missed. Do expect a pre-recorded lecture or instructor support if you miss class. A suggestion is to partner with a classmate to share notes from class.
+You are expected to attend and participate in every class session. If you must miss class, you are responsible for making up the work and catching up on what you missed. Do not expect a pre-recorded lecture or instructor support if you miss class. A suggestion is to partner with a classmate to share notes from class.
 
 ### Assignments
 
@@ -133,10 +125,10 @@ The project is your opportunity to demonstrate what you have learned in an exper
 
 | Assessment | Type | Learning Outcomes | Quantity | Points Each | Points Total |
 |------------|------|-------------------|----------|-------------|--------------|
-| Assignments | Formative | 1, 2 | 8 | 4 | 32 |
-| Exams | Summative | 3, 4 | 2 | 24 | 48 |
+| Assignments | Formative | 1, 2 | 8 | 10 | 80 |
+| Exams | Summative | 3, 4 | 2 | 50 | 100 |
 | Project | Summative | 5 | 1 | 20 | 20 |
-| **Total** | | | | | **100** |
+| **Total** | | | | | **200** |
 
 ### Grading Table
 
@@ -144,16 +136,16 @@ The following grading scale translates your total points earned into a letter gr
 
 | Student Achievement | Total Points Earned	| Registrar Grade |Grade Points |
 |---------------------|---------------------|-----------------|-------------|
-| Mastery | 95 - 100 | A | 4.000 |
-| | 90 - 94 | A- | 3.666 |
-| Satisfactory | 85 - 89 | B+ | 3.333 |
-| | 80 - 84   | B | 3.000 |
-| | 75 - 79  | B- | 2.666 |
-| Low Passing  | 70 - 74 | C+ | 2.333 |
-| | 65 - 69  | C | 2.000 |
-| | 60 - 64  | C- | 1.666 |
-| Unsatisfactory | 50 - 60  | D | 1.000 |
-| | 0 - 49 | F | 0.000 |
+| Mastery | 190 - 200 | A | 4.000 |
+| | 180 - 189 | A- | 3.666 |
+| Satisfactory | 170 - 179 | B+ | 3.333 |
+| | 160 - 169   | B | 3.000 |
+| | 150 - 159  | B- | 2.666 |
+| Low Passing  | 140 - 149 | C+ | 2.333 |
+| | 130 - 139  | C | 2.000 |
+| | 120 - 129  | C- | 1.666 |
+| Unsatisfactory | 100 - 119  | D | 1.000 |
+| | 0 - 99 | F | 0.000 |
 
 ## Other Policies
 
