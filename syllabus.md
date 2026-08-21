@@ -199,7 +199,7 @@ Based on the assignments in this course and our specified learning outcomes, the
 
 #### Reading List
 
-- Python 1.1: Input, output, variables, types, conditionals 
+- Python 1-1: Input, output, variables, types, conditionals 
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/)  (1.1 to 1.7) 
 - Python 1-2: Iterations, lists, dictionaries, comprehensions
     - [https://www.tomasbeuzen.com/python-programming-for-data-science/](https://www.tomasbeuzen.com/python-programming-for-data-science/) (2.1 to 2.4)
