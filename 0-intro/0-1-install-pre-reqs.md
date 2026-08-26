@@ -29,11 +29,8 @@ If you don't want to run the commands manually, you can try these automated scri
 **Windows** (Open PowerShell as Administrator):
 
 ```powershell
-irm https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/windows.ps1 -OutFile "$env:TEMP\ist356-setup.ps1"
-powershell -ExecutionPolicy Bypass -File "$env:TEMP\ist356-setup.ps1"
+irm https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/windows.ps1 | iex
 ```
-
-> Run it as a **file**, in two steps, exactly as above. Don't use the shorter `irm ... | iex` form: `iex` runs the script inside your own PowerShell window, so when the script stops to tell you something is wrong it closes your window along with it, and you never get to read the message.
 
 **macOS** (Open a Terminal):
 
