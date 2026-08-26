@@ -222,6 +222,20 @@ docker pull mafudge/ist356:latest
 
 Once that finishes, opening the dev container is quick, because the image is already on your machine.
 
+### "winget is not recognized as the name of a cmdlet..."
+
+`winget` is part of **App Installer**. Two things cause it to go missing, and the second is by far the more common one in this course:
+
+**1. App Installer isn't installed.** It ships with Windows 11 and current Windows 10, but not with older builds. Open the **Microsoft Store**, search for **App Installer**, and install or update it. If this PC has no Store, get it from <https://aka.ms/getwinget>. Then open a **new** PowerShell window and check:
+
+```powershell
+winget --version
+```
+
+**2. You elevated PowerShell as a different account.** 👈 *Usually this one.* `winget` is installed **per user**. If the User Account Control prompt asked for an administrator's *username and password* and you typed someone else's, PowerShell is now running as that person — and `winget` doesn't exist for them, so it disappears from PATH.
+
+This also means your account is **not** an administrator. See the next section, which has the fix — it's the same underlying problem.
+
 ### "I had to type a different admin account at the User Account Control prompt."
 
 If the UAC prompt asked for a username *and* password and you entered somebody else's administrator account, then Windows installed VS Code and its extensions **for that account, not for you**. From your own login, VS Code will have no Dev Containers extension — so "Reopen in Container" won't be there at all.

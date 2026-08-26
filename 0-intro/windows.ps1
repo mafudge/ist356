@@ -18,14 +18,24 @@ $CourseImage           = "mafudge/ist356:latest"
 function Invoke-Step {
     param(
         [Parameter(Mandatory)][string] $Description,
-        [Parameter(Mandatory)][scriptblock] $Command
+        [Parameter(Mandatory)][scriptblock] $Command,
+        [int[]] $AllowExitCodes = @()
     )
     Write-Host "==> $Description" -ForegroundColor Cyan
     & $Command
-    if ($LASTEXITCODE -ne 0) {
+    if ($LASTEXITCODE -ne 0 -and $AllowExitCodes -notcontains $LASTEXITCODE) {
         throw "$Description failed (exit code $LASTEXITCODE). Nothing after this point would have worked, so stopping here."
     }
 }
+
+# winget reports failure when a package is already present, which is exactly
+# what happens every time a student re-runs this script after the reboot we
+# ask them for. Treat "already installed" and "no upgrade available" as success.
+$WingetAlreadyInstalled = @(
+    -1978335135,  # 0x8A150061 APPINSTALLER_CLI_ERROR_PACKAGE_ALREADY_INSTALLED
+    -1978335189,  # 0x8A15002B APPINSTALLER_CLI_ERROR_UPDATE_NOT_APPLICABLE
+    -1978335212   # 0x8A150014 APPINSTALLER_CLI_ERROR_NO_APPLICATIONS_FOUND (re-run edge case)
+)
 
 function Write-Fatal {
     param([Parameter(Mandatory)][string[]] $Lines)
@@ -33,6 +43,49 @@ function Write-Fatal {
     foreach ($line in $Lines) { Write-Host $line -ForegroundColor Red }
     Write-Host ""
     exit 1
+}
+
+# Who is actually sitting at this machine? NOT $env:USERNAME -- when a process
+# is elevated as a different account, that account's environment comes with it,
+# so $env:USERNAME reports the elevated user and the mismatch is invisible.
+# The owner of explorer.exe is the interactive session's real user.
+function Get-InteractiveUser {
+    try {
+        $explorer = Get-CimInstance Win32_Process -Filter "Name='explorer.exe'" -ErrorAction Stop |
+                    Select-Object -First 1
+        if (-not $explorer) { return $null }
+        $owner = Invoke-CimMethod -InputObject $explorer -MethodName GetOwner -ErrorAction Stop
+        if ($owner.ReturnValue -ne 0) { return $null }
+        return "$($owner.Domain)\$($owner.User)"
+    } catch {
+        return $null   # can't tell; don't block on it
+    }
+}
+
+# winget ships inside "App Installer", a PER-USER package surfaced through
+# %LOCALAPPDATA%\Microsoft\WindowsApps. That is why it vanishes in a session
+# elevated as somebody else, and why "winget is not recognized" is such a
+# common failure here.
+function Resolve-Winget {
+    $cmd = Get-Command winget -ErrorAction SilentlyContinue
+    if ($cmd) { return $cmd.Source }
+
+    $userPath = Join-Path $env:LOCALAPPDATA "Microsoft\WindowsApps\winget.exe"
+    if (Test-Path $userPath) { return $userPath }
+
+    # Usual cure when App Installer is present but not wired into this session.
+    try {
+        Add-AppxPackage -RegisterByFamilyName `
+                        -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe `
+                        -ErrorAction Stop
+        $cmd = Get-Command winget -ErrorAction SilentlyContinue
+        if ($cmd) { return $cmd.Source }
+        if (Test-Path $userPath) { return $userPath }
+    } catch {
+        # fall through to the caller's error message
+    }
+
+    return $null
 }
 
 # ---------------------------------------------------------------------------
@@ -61,22 +114,79 @@ if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administra
     )
 }
 
-# If the student cleared the UAC prompt using SOMEBODY ELSE'S administrator
-# account, VS Code and its extensions install into that account's profile.
-# Everything then "installs fine" but their own login has no Dev Containers
-# extension -- a confusing failure worth naming up front.
+# If the UAC prompt was cleared with SOMEBODY ELSE'S administrator account,
+# this whole script runs as that person. winget disappears (it is per-user),
+# and anything that does install lands in their profile, not the student's.
+# There is no way to salvage that, so stop rather than produce a broken setup.
 $elevatedUser    = $identity.Name
-$interactiveUser = "$env:USERDOMAIN\$env:USERNAME"
-if ($elevatedUser -ne $interactiveUser) {
-    Write-Host ""
-    Write-Host "WARNING: This window is elevated as '$elevatedUser', but you are" -ForegroundColor Yellow
-    Write-Host "         logged in as '$interactiveUser'." -ForegroundColor Yellow
-    Write-Host "         VS Code and its extensions will be installed for" -ForegroundColor Yellow
-    Write-Host "         '$elevatedUser', NOT for you, and the dev container will" -ForegroundColor Yellow
-    Write-Host "         not work from your own login." -ForegroundColor Yellow
-    Write-Host "         See 'Troubleshooting (Windows)' in 0-1-install-pre-reqs.md." -ForegroundColor Yellow
-    Write-Host ""
+$interactiveUser = Get-InteractiveUser
+if ($interactiveUser -and ($elevatedUser -ne $interactiveUser)) {
+    Write-Fatal @(
+        "STOP: this window is running as the wrong user.",
+        "",
+        "  You are logged in as:      $interactiveUser",
+        "  This window is running as: $elevatedUser",
+        "",
+        "That happens when the User Account Control prompt asked for an",
+        "administrator's username and password, and a different account was",
+        "entered -- which means your own account is not an administrator.",
+        "",
+        "If this script continued, Git, VS Code and its extensions would all",
+        "install for '$elevatedUser' instead of for you, and the dev container",
+        "would never work from your login. The 'winget is not recognized'",
+        "error comes from this too: winget is installed per-user, so it does",
+        "not exist for the account that was elevated.",
+        "",
+        "You have three options:",
+        "",
+        "  1. Sign in to Windows directly as an administrator account and run",
+        "     this script there.",
+        "  2. If this is a school- or work-managed PC, ask your IT support to",
+        "     make YOUR account an administrator.",
+        "  3. Skip the local install entirely and use GitHub Codespaces --",
+        "     see Step 1 option 2 in 0-intro/0-0-setup.md. Nothing to install."
+    )
 }
+
+# ---------------------------------------------------------------------------
+# Windows version and winget
+# ---------------------------------------------------------------------------
+Write-Host "==> Checking Windows version..." -ForegroundColor Cyan
+$build = [int](Get-CimInstance Win32_OperatingSystem).BuildNumber
+if ($build -lt 17763) {
+    Write-Fatal @(
+        "STOP: this version of Windows is too old (build $build).",
+        "",
+        "This course needs Windows 10 version 1809 (build 17763) or newer,",
+        "and realistically Windows 11 for a good experience.",
+        "",
+        "Run Windows Update, then try again. If this PC cannot be updated,",
+        "use GitHub Codespaces instead -- see Step 1 option 2 in",
+        "0-intro/0-0-setup.md."
+    )
+}
+
+Write-Host "==> Locating winget..." -ForegroundColor Cyan
+$winget = Resolve-Winget
+if (-not $winget) {
+    Write-Fatal @(
+        "STOP: winget is not available.",
+        "",
+        "winget is part of 'App Installer'. It ships with Windows 11 and with",
+        "current Windows 10, but it is missing here.",
+        "",
+        "To fix it:",
+        "",
+        "  1. Open the Microsoft Store, search for 'App Installer', and",
+        "     install or update it. Then run this script again in a NEW",
+        "     PowerShell window.",
+        "  2. If there is no Microsoft Store on this PC, download App Installer",
+        "     directly from  https://aka.ms/getwinget  and install it.",
+        "",
+        "Then confirm it works by running:  winget --version"
+    )
+}
+Write-Host "    Using: $winget"
 
 # ---------------------------------------------------------------------------
 # WSL 2
@@ -86,6 +196,19 @@ if ($elevatedUser -ne $interactiveUser) {
 # that point installs Docker against a backend that cannot run, which is what
 # makes "Reopen in Container" hang forever with no error.
 # ---------------------------------------------------------------------------
+if (-not (Get-Command wsl -ErrorAction SilentlyContinue)) {
+    Write-Fatal @(
+        "STOP: the 'wsl' command is not available on this PC.",
+        "",
+        "WSL 2 is what Docker Desktop runs containers on, so it is required.",
+        "",
+        "Run Windows Update and install everything it offers, restart, then",
+        "run this script again. If this PC is managed by an IT department,",
+        "they may have blocked WSL -- in that case use GitHub Codespaces,",
+        "see Step 1 option 2 in 0-intro/0-0-setup.md."
+    )
+}
+
 Write-Host "==> Enabling WSL 2 (may require a reboot to complete)..." -ForegroundColor Cyan
 wsl --install
 
@@ -113,16 +236,16 @@ if (-not $wslReady) {
 # ---------------------------------------------------------------------------
 # Packages
 # ---------------------------------------------------------------------------
-Invoke-Step "Installing Git..." {
-    winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
+Invoke-Step "Installing Git..." -AllowExitCodes $WingetAlreadyInstalled {
+    & $winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
 }
 
-Invoke-Step "Installing Visual Studio Code..." {
-    winget install --id Microsoft.VisualStudioCode -e --accept-source-agreements --accept-package-agreements
+Invoke-Step "Installing Visual Studio Code..." -AllowExitCodes $WingetAlreadyInstalled {
+    & $winget install --id Microsoft.VisualStudioCode -e --accept-source-agreements --accept-package-agreements
 }
 
-Invoke-Step "Installing Docker Desktop..." {
-    winget install --id Docker.DockerDesktop -e --accept-source-agreements --accept-package-agreements
+Invoke-Step "Installing Docker Desktop..." -AllowExitCodes $WingetAlreadyInstalled {
+    & $winget install --id Docker.DockerDesktop -e --accept-source-agreements --accept-package-agreements
 }
 
 # ---------------------------------------------------------------------------
