@@ -38,7 +38,10 @@ $WingetAlreadyInstalled = @(
 )
 
 function Write-Fatal {
-    param([Parameter(Mandatory)][string[]] $Lines)
+    # No [Parameter(Mandatory)] here on purpose: a mandatory [string[]] refuses
+    # to bind an array containing empty strings, and every message below uses
+    # "" for blank lines.
+    param([string[]] $Lines = @())
     Write-Host ""
     foreach ($line in $Lines) { Write-Host $line -ForegroundColor Red }
     Write-Host ""
@@ -70,8 +73,13 @@ function Resolve-Winget {
     $cmd = Get-Command winget -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
 
-    $userPath = Join-Path $env:LOCALAPPDATA "Microsoft\WindowsApps\winget.exe"
-    if (Test-Path $userPath) { return $userPath }
+    # $env:LOCALAPPDATA can be missing in odd elevation contexts -- which is
+    # precisely when this function matters -- so never hand Join-Path a null.
+    $userPath = $null
+    if ($env:LOCALAPPDATA) {
+        $userPath = Join-Path $env:LOCALAPPDATA "Microsoft\WindowsApps\winget.exe"
+        if (Test-Path $userPath) { return $userPath }
+    }
 
     # Usual cure when App Installer is present but not wired into this session.
     try {
@@ -80,7 +88,7 @@ function Resolve-Winget {
                         -ErrorAction Stop
         $cmd = Get-Command winget -ErrorAction SilentlyContinue
         if ($cmd) { return $cmd.Source }
-        if (Test-Path $userPath) { return $userPath }
+        if ($userPath -and (Test-Path $userPath)) { return $userPath }
     } catch {
         # fall through to the caller's error message
     }
