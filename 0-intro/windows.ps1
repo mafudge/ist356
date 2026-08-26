@@ -1,6 +1,10 @@
 # windows.ps1
 # Dev Container prerequisites for Windows.
 # Run in PowerShell AS ADMINISTRATOR:  powershell -ExecutionPolicy Bypass -File .\windows.ps1
+#
+# Download this file and run it as a FILE, as above. Do NOT pipe it into iex
+# (`irm ... | iex`): iex runs it inside your own PowerShell process, so the
+# `exit` calls below close your window before you can read the error message.
 
 $ErrorActionPreference = "Stop"
 
@@ -45,6 +49,10 @@ function Write-Fatal {
     Write-Host ""
     foreach ($line in $Lines) { Write-Host $line -ForegroundColor Red }
     Write-Host ""
+    # Hold the window open. If this script was piped into iex it is running
+    # inside the student's own PowerShell process, so `exit` closes the whole
+    # window instantly and the message above is never read.
+    try { Read-Host "Press ENTER to close" | Out-Null } catch { }
     exit 1
 }
 
