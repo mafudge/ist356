@@ -88,7 +88,8 @@ If you're going to work on your computer, make a folder for all the course mater
 
 4. When VS Code opens the folder, it detects the `.devcontainer` configuration and shows a notification in the bottom-right: **"Reopen in Container"** — click it.  
    (If you miss the notification, press `F1`, type **Dev Containers: Reopen in Container**, and press ENTER.)
-5. The first time, VS Code builds the container image — this can take a few minutes. Watch the progress in the bottom-right; you can click it to view the build log.
+5. The first time, VS Code downloads the container image — **about 1.3 GB**. Watch the progress in the bottom-right; **click it to view the log** so you can see it actually moving. On a slow connection this can take 20 minutes or more, and while it runs VS Code looks like it's doing nothing. It isn't stuck — it's downloading.  
+   To download it ahead of time with a real progress bar instead, run `docker pull mafudge/ist356:latest` in a terminal first.
 6. When it finishes, the green button in the bottom-left corner reads **Dev Container: IST356 Course Content**. You're now coding inside the container with Python, Jupyter, and everything else pre-installed. 🎉
 
 ### On Github Codespaces:

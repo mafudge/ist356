@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# install-prereqs-ubuntu.sh
+# ubuntu.sh
 # Dev Container prerequisites for Ubuntu (installs Docker Engine natively).
-# Usage:  chmod +x install-prereqs-ubuntu.sh && ./install-prereqs-ubuntu.sh
+# Usage:  chmod +x ubuntu.sh && ./ubuntu.sh
 
 set -euo pipefail
 
