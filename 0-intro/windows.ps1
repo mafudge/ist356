@@ -1,6 +1,6 @@
-# install-prereqs.ps1
+# windows.ps1
 # Dev Container prerequisites for Windows.
-# Run in PowerShell AS ADMINISTRATOR:  powershell -ExecutionPolicy Bypass -File .\install-prereqs.ps1
+# Run in PowerShell AS ADMINISTRATOR:  powershell -ExecutionPolicy Bypass -File .\windows.ps1
  
 $ErrorActionPreference = "Stop"
  
