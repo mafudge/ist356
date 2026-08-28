@@ -32,6 +32,8 @@ If you don't want to run the commands manually, you can try these automated scri
 irm https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-intro/windows.ps1 | iex
 ```
 
+> **Windows students: expect to run this more than once.** The script stops on purpose at two points it cannot get past on its own — after WSL 2 is installed it needs you to **reboot**, and after Docker Desktop starts it needs you to switch on **WSL integration** in Docker's settings. Each time, it tells you exactly what to do and asks you to run it again. Re-running is safe and fast; it skips everything already installed.
+
 **macOS** (Open a Terminal):
 
 ```bash
@@ -63,8 +65,8 @@ curl -fsSL https://raw.githubusercontent.com/mafudge/ist356/refs/heads/main/0-in
 Run in **PowerShell as Administrator**. Windows 10/11 includes `winget`.
 
 ```powershell
-# Enable WSL 2 (installs WSL + default Ubuntu distro, sets WSL 2 as default)
-wsl --install
+# Enable WSL 2 and install the Ubuntu distro (sets WSL 2 as default)
+wsl --install -d Ubuntu
 
 # Git
 winget install --id Git.Git -e
@@ -81,14 +83,56 @@ code --install-extension ms-vscode-remote.remote-containers
 
 **After installing:**
 
-1. **Reboot** to finish WSL 2 setup. Don't skip this — Docker cannot start its engine until you do.
-2. Launch **Docker Desktop** once so it completes WSL integration. The first time it opens it asks you to **accept a service agreement** — you must accept it, or the engine never starts.
-3. Wait until Docker Desktop's window says **Engine running** in the bottom-left corner. Only then is Docker actually usable.
-4. Open a fresh terminal if `code` isn't recognized (PATH refresh).
+1. **Reboot.** Don't skip this — WSL 2 is not usable until the PC restarts, and Docker cannot start its engine until WSL 2 works.
+
+2. **Run WSL once to finish setting it up.** 👈 *This is the step everyone misses.* `wsl --install -d Ubuntu` only **downloads** Ubuntu — the install isn't finished until you launch it one time. Open PowerShell and type:
+
+   ```powershell
+   wsl
+   ```
+
+   The first launch finishes installing Ubuntu and then asks you to **create a UNIX username and password**. That is a *new* account inside Ubuntu: it is **not** your Windows login and does not have to match it. Pick something short you'll remember. **Nothing appears on screen while you type the password** — no dots, no asterisks. That's normal, not a dead keyboard.
+
+   When you land at a prompt that looks like `you@yourpc:~$`, Ubuntu is set up. Type `exit` to return to PowerShell.
+
+3. **Verify WSL.** Back in PowerShell:
+
+   ```powershell
+   wsl -l -v
+   ```
+
+   You should see `Ubuntu` with `VERSION` **2**, and a `*` next to it marking it as your default distro. If the list is empty or Ubuntu is missing, install it explicitly and repeat step 2:
+
+   ```powershell
+   wsl --install -d Ubuntu
+   ```
+
+4. **Launch Docker Desktop** once so it completes WSL integration. The first time it opens it asks you to **accept a service agreement** — you must accept it, or the engine never starts. Wait until the bottom-left corner of its window says **Engine running**. Only then is Docker actually usable.
+
+5. **Configure Docker to use WSL.** In Docker Desktop go to **Settings → Resources → WSL integration** and make sure both of these are set:
+
+   - ✅ **Enable integration with my default WSL distro** is checked
+   - Under **Enable integration with additional distros**, the **Ubuntu** toggle is switched **on**
+
+   ![Docker Desktop Settings, Resources, WSL integration tab: the checkbox "Enable integration with my default WSL distro" is checked and the Ubuntu toggle under "Enable integration with additional distros" is on](images/docker-desktop-wsl-integration.png)
+
+   Then click **Apply & restart** and wait for **Engine running** to come back.
+
+   > If **Ubuntu** does not appear in that list at all, you skipped step 2. The distro isn't set up yet, so Docker has nothing to integrate with. Go back, run `wsl`, create your UNIX username and password, then return here.
+
+6. **Verify Docker and WSL are wired together.** In PowerShell:
+
+   ```powershell
+   wsl -e docker run hello-world
+   ```
+
+   This runs Docker *from inside Ubuntu*. If it prints the hello message, Windows, WSL 2, and Docker are all talking to each other. If you get `docker: command not found`, the integration in step 5 is not switched on.
+
+7. Open a fresh terminal if `code` isn't recognized (PATH refresh).
 
 > Requires virtualization enabled in BIOS/UEFI.
 
-> ⚠️ If you skip steps 1–3, VS Code's **Reopen in Container** will spin forever and **never show an error message**. See [Troubleshooting (Windows)](#troubleshooting-windows) below.
+> ⚠️ If you skip steps 1–6, VS Code's **Reopen in Container** will spin forever and **never show an error message**. See [Troubleshooting (Windows)](#troubleshooting-windows) below.
 
 ---
 
@@ -198,7 +242,14 @@ This is the most common Windows problem in this course, and the silence is the c
 1. **Is Docker Desktop actually running?** Open it from the Start menu. Look at the **bottom-left corner** of its window — it must say **Engine running**. "Starting…" or "Stopped" means Docker isn't ready, and nothing container-related will work.
 2. **Is it waiting on the service agreement?** The first time Docker Desktop launches it shows an agreement you have to accept. Until you click accept, the engine silently stays down.
 3. **Did you reboot after WSL 2 was installed?** WSL 2 doesn't work until the PC restarts, and Docker's engine is built on it. If you haven't rebooted since running the install script, do it now.
-4. **Is WSL integration turned on?** In Docker Desktop: **Settings → Resources → WSL Integration**, make sure it's enabled.
+4. **Did you run `wsl` once to finish setting it up?** Installing WSL is not the same as *finishing* WSL. Run:
+
+   ```powershell
+   wsl -l -v
+   ```
+
+   If nothing is listed, run `wsl --install -d Ubuntu`. If `Ubuntu` is listed but you were never asked to create a UNIX username and password, type `wsl`, complete the setup, then `exit`. See [step 2 of the Windows install](#windows) above.
+5. **Is WSL integration turned on in Docker?** In Docker Desktop: **Settings → Resources → WSL integration** — **Enable integration with my default WSL distro** must be checked, *and* the **Ubuntu** toggle under **Enable integration with additional distros** must be on. Click **Apply & restart**. See [step 5 of the Windows install](#windows) above for a screenshot.
 
 To confirm Docker is healthy before you touch VS Code, run this in a terminal:
 
@@ -207,6 +258,33 @@ docker run hello-world
 ```
 
 If that prints a hello message, Docker is fine. If it hangs or errors, fix that first — the dev container cannot work until it succeeds.
+
+### "Docker Desktop's WSL integration list is empty — there's no Ubuntu to turn on."
+
+Docker can only integrate with a distro that has actually finished installing. `wsl --install -d Ubuntu` downloads Ubuntu but leaves it half-built until the first launch, and a half-built distro does not show up in Docker's list.
+
+**Fix.** In PowerShell:
+
+```powershell
+wsl
+```
+
+Complete the first-run setup (it asks you to create a UNIX username and password), type `exit`, then go back to **Settings → Resources → WSL integration** in Docker Desktop. **Ubuntu** will be there now. Switch it on and click **Apply & restart**.
+
+If `wsl` reports that no distributions are installed, install one first:
+
+```powershell
+wsl --install -d Ubuntu
+```
+
+### "WSL is asking me to create a password, but nothing happens when I type."
+
+**It is working.** Linux shows *nothing at all* while you type a password — no dots, no asterisks, no moving cursor. Type the password you want and press **ENTER**, then type it again to confirm.
+
+Two things to know about this account:
+
+- It is a **new** username and password that exists only inside Ubuntu. It is not your Windows login, your SU NetID, or your GitHub account.
+- Write it down. You'll need the password any time you run a `sudo` command inside Ubuntu.
 
 ### "It looks frozen, but is it actually just downloading?"
 
@@ -259,5 +337,14 @@ On any platform, confirm the Docker runtime works.
 ```bash
 docker run hello-world
 ```
+
+**On Windows**, also confirm WSL 2 finished setting up and that Docker is wired into it:
+
+```powershell
+wsl -l -v                      # Ubuntu should be listed, VERSION 2, marked * as default
+wsl -e docker run hello-world  # runs Docker from inside Ubuntu
+```
+
+If the second command says `docker: command not found`, turn on **Settings → Resources → WSL integration** in Docker Desktop — see [step 5 of the Windows install](#windows).
 
 After that you can continue with the [Course Setup](0-0-setup.md)

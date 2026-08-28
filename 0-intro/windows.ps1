@@ -105,6 +105,53 @@ function Resolve-Winget {
     return $null
 }
 
+# wsl.exe prints UTF-16LE, which arrives as text riddled with null bytes unless
+# the console is told what to expect. Without this the distro list looks like
+# gibberish and never matches anything.
+function Get-WslDistro {
+    $previousEncoding = [Console]::OutputEncoding
+    try {
+        [Console]::OutputEncoding = [Text.Encoding]::Unicode
+        $raw = & wsl.exe --list --quiet 2>$null
+    } catch {
+        return @()
+    } finally {
+        [Console]::OutputEncoding = $previousEncoding
+    }
+    # docker-desktop registers distros of its own; they are plumbing, not a
+    # Linux environment the student can use.
+    return @($raw |
+             ForEach-Object { ($_ -replace "`0", "").Trim() } |
+             Where-Object { $_ -ne "" -and $_ -notmatch '^docker-desktop' })
+}
+
+# Run wsl.exe with a time limit, in a background job so it can never sit
+# waiting on the keyboard. A distro that has not completed its first run wants
+# to start an interactive setup wizard; from a job that fails fast instead of
+# hanging this script forever. Returns the exit code, or $null on timeout.
+function Invoke-WslWithTimeout {
+    param(
+        [Parameter(Mandatory)][string[]] $Arguments,
+        [int] $TimeoutSeconds = 90
+    )
+    $job = Start-Job -ScriptBlock {
+        param($wslArgs)
+        & wsl.exe @wslArgs *> $null
+        $LASTEXITCODE
+    } -ArgumentList (, $Arguments)
+
+    if (-not (Wait-Job -Job $job -Timeout $TimeoutSeconds)) {
+        Stop-Job   -Job $job -ErrorAction SilentlyContinue
+        Remove-Job -Job $job -Force -ErrorAction SilentlyContinue
+        return $null
+    }
+    $code = Receive-Job -Job $job -ErrorAction SilentlyContinue
+    Remove-Job -Job $job -Force -ErrorAction SilentlyContinue
+    if ($code -is [array]) { $code = $code | Select-Object -Last 1 }
+    if ($null -eq $code)   { return $null }
+    return [int]$code
+}
+
 # ---------------------------------------------------------------------------
 # Are you running as Administrator?
 #
@@ -226,8 +273,12 @@ if (-not (Get-Command wsl -ErrorAction SilentlyContinue)) {
     )
 }
 
-Write-Host "==> Enabling WSL 2 (may require a reboot to complete)..." -ForegroundColor Cyan
-wsl --install
+Write-Host "==> Enabling WSL 2 and installing Ubuntu (may require a reboot)..." -ForegroundColor Cyan
+# Name the distro explicitly. `wsl --install` on its own has meant different
+# things across Windows builds -- on some it installs Ubuntu, on others it only
+# turns the feature on and leaves the machine with no distro at all, which is
+# invisible until Docker's WSL integration list turns up empty.
+wsl --install -d Ubuntu
 
 # Deliberately ignore the exit code of `wsl --install` -- on a machine that
 # already has WSL it reports failure (or just prints help) even though
@@ -249,6 +300,95 @@ if (-not $wslReady) {
         "It will pick up where it left off and skip anything already installed."
     )
 }
+
+# ---------------------------------------------------------------------------
+# Ubuntu's FIRST RUN.
+#
+# Installing a distro only downloads it. It is not finished until it has been
+# launched once and a UNIX user has been created -- and an unfinished distro
+# does not appear in Docker Desktop under Settings -> Resources -> WSL
+# integration, so there is nothing there for Docker to integrate with. That
+# first run prompts for a username and password, so it cannot be automated;
+# hand the console to the student instead of trying.
+# ---------------------------------------------------------------------------
+Write-Host "==> Checking the Ubuntu WSL distro..." -ForegroundColor Cyan
+$distros = Get-WslDistro
+if ($distros.Count -eq 0) {
+    Write-Host "    No Linux distro is installed yet. Installing Ubuntu..."
+    wsl --install -d Ubuntu
+    $distros = Get-WslDistro
+}
+
+if ($distros.Count -eq 0) {
+    Write-Fatal @(
+        "STOP: no WSL Linux distro is installed.",
+        "",
+        "Docker Desktop runs your containers inside a WSL 2 Linux distro, so",
+        "without one nothing in this course will run.",
+        "",
+        "  1. Run:  wsl --install -d Ubuntu",
+        "  2. Restart your computer if it asks you to.",
+        "  3. Run:  wsl          (and create a UNIX username and password)",
+        "  4. Run this script again.",
+        "",
+        "If this PC is managed by an IT department they may have blocked WSL.",
+        "In that case use GitHub Codespaces -- see Step 1 option 2 in",
+        "0-intro/0-0-setup.md."
+    )
+}
+Write-Host "    Installed distro(s): $($distros -join ', ')"
+
+# Can the default distro actually run a command? One that has not completed its
+# first run cannot -- it wants to show its setup wizard instead.
+$distroReady = ((Invoke-WslWithTimeout -Arguments @("-e", "true")) -eq 0)
+
+if (-not $distroReady) {
+    Write-Host ""
+    Write-Host "ONE MANUAL STEP: Ubuntu has to be started once to finish installing." -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  Ubuntu will now open and ask you to CREATE A UNIX USERNAME AND"
+    Write-Host "  PASSWORD. This is a brand new account that lives inside Ubuntu."
+    Write-Host "  It is NOT your Windows login, your NetID, or your GitHub account."
+    Write-Host "  Pick something short you will remember, and write it down."
+    Write-Host ""
+    Write-Host "  NOTHING APPEARS ON SCREEN WHILE YOU TYPE THE PASSWORD -- no dots,"
+    Write-Host "  no asterisks. That is normal, not a broken keyboard."
+    Write-Host ""
+    Write-Host '  When you reach a prompt that looks like  you@yourpc:~$  type'
+    Write-Host "  exit  and press ENTER to come back here."
+    Write-Host ""
+    try { Read-Host "Press ENTER to start Ubuntu" | Out-Null } catch { }
+
+    wsl.exe
+
+    Write-Host ""
+    Write-Host "==> Re-checking the Ubuntu WSL distro..." -ForegroundColor Cyan
+    $distroReady = ((Invoke-WslWithTimeout -Arguments @("-e", "true")) -eq 0)
+}
+
+if (-not $distroReady) {
+    Write-Fatal @(
+        "STOP: the Ubuntu distro still isn't finished installing.",
+        "",
+        "It is installed but cannot run a command yet, which means its",
+        "first-time setup did not complete. Docker Desktop will not be able to",
+        "integrate with it in that state.",
+        "",
+        "  1. Open PowerShell and run:  wsl",
+        "  2. Create the UNIX username and password it asks for.",
+        "  3. When you get a Linux prompt, type:  exit",
+        "  4. Run this script again.",
+        "",
+        "If 'wsl' reports an error instead of asking for a username, try:",
+        "",
+        "     wsl --unregister Ubuntu",
+        "     wsl --install -d Ubuntu",
+        "",
+        "then repeat from step 1. (Unregister deletes the Ubuntu distro and",
+        "anything stored in it -- fine here, since it never finished setting up.)"
+    )
+}
+Write-Host "    Ubuntu is set up and can run commands." -ForegroundColor Green
 
 # ---------------------------------------------------------------------------
 # Packages
@@ -363,14 +503,81 @@ if (-not $engineReady) {
         "     in the bottom-left corner? If it is showing a service agreement,",
         "     accept it.",
         "  2. Did you restart the PC after WSL 2 was installed?",
-        "  3. In Docker Desktop: Settings -> Resources -> WSL Integration,",
-        "     make sure integration is enabled.",
+        "  3. In Docker Desktop: Settings -> Resources -> WSL integration,",
+        "     tick 'Enable integration with my default WSL distro', switch the",
+        "     'Ubuntu' toggle on, and click Apply & restart.",
         "",
         "Then run this script again."
     )
 }
 
 Write-Host "    Docker engine is running." -ForegroundColor Green
+
+# ---------------------------------------------------------------------------
+# Docker <-> WSL integration.
+#
+# Docker Desktop only exposes the docker command inside a distro that is switched
+# on under Settings -> Resources -> WSL integration. The "default WSL distro"
+# checkbox is on out of the box, but the per-distro toggle for Ubuntu is not,
+# and Docker exposes no supported command line for it -- so this is a GUI step
+# the student has to do. Running docker from inside Ubuntu is the honest test of
+# whether they did.
+# ---------------------------------------------------------------------------
+Write-Host "==> Checking that Docker is integrated with WSL..." -ForegroundColor Cyan
+$wslDockerOk = ((Invoke-WslWithTimeout -Arguments @("-e", "docker", "info")) -eq 0)
+
+$attempts = 0
+while (-not $wslDockerOk -and $attempts -lt 3) {
+    $attempts++
+    Write-Host ""
+    Write-Host "ONE MANUAL STEP: Docker is not switched on for Ubuntu yet." -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  In the Docker Desktop window:"
+    Write-Host ""
+    Write-Host "    1. Click the gear icon (Settings), top right."
+    Write-Host "    2. Choose  Resources  in the left sidebar."
+    Write-Host "    3. Click the  WSL integration  tab."
+    Write-Host "    4. TICK      'Enable integration with my default WSL distro'"
+    Write-Host "    5. SWITCH ON the 'Ubuntu' toggle underneath, in"
+    Write-Host "                 'Enable integration with additional distros'"
+    Write-Host "    6. Click  Apply & restart  and wait for 'Engine running'."
+    Write-Host ""
+    Write-Host "  There is a screenshot of this screen in"
+    Write-Host "  0-intro/0-1-install-pre-reqs.md (Windows, step 5)."
+    Write-Host ""
+    try { Read-Host "Press ENTER once you have done that" | Out-Null } catch { }
+
+    Write-Host "==> Re-checking Docker's WSL integration..." -ForegroundColor Cyan
+    $wslDockerOk = ((Invoke-WslWithTimeout -Arguments @("-e", "docker", "info")) -eq 0)
+}
+
+if (-not $wslDockerOk) {
+    Write-Fatal @(
+        "STOP: Docker still is not available inside Ubuntu.",
+        "",
+        "Everything is installed, but Docker Desktop is not integrated with",
+        "your WSL 2 distro, so the two halves of the setup cannot talk to each",
+        "other.",
+        "",
+        "In Docker Desktop go to  Settings -> Resources -> WSL integration  and",
+        "make sure BOTH of these are set:",
+        "",
+        "  - 'Enable integration with my default WSL distro' is TICKED",
+        "  - the 'Ubuntu' toggle under 'Enable integration with additional",
+        "    distros' is switched ON",
+        "",
+        "Click Apply & restart, wait for 'Engine running', then run this script",
+        "again. You can check it yourself at any time with:",
+        "",
+        "     wsl -e docker run hello-world",
+        "",
+        "If 'Ubuntu' is not in that list at all, its first-time setup never",
+        "finished. Run  wsl  in PowerShell, create a UNIX username and password,",
+        "type  exit  , then restart Docker Desktop."
+    )
+}
+
+Write-Host "    Docker is available inside Ubuntu." -ForegroundColor Green
 
 # ---------------------------------------------------------------------------
 # Pre-pull the course image.
@@ -398,9 +605,11 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host ""
 Write-Host "Done. Verified:" -ForegroundColor Green
 Write-Host "  - WSL 2 is working"
+Write-Host "  - The Ubuntu distro is installed and its first-run setup is complete"
 Write-Host "  - Git, VS Code and Docker Desktop are installed"
 Write-Host "  - The Dev Containers extension is installed"
 Write-Host "  - The Docker engine is running"
+Write-Host "  - Docker Desktop is integrated with the Ubuntu WSL distro"
 Write-Host ""
 Write-Host "NEXT STEPS:" -ForegroundColor Green
 Write-Host "  1. Sanity check:  docker run hello-world"
