@@ -13,8 +13,7 @@
 
   👨 Professor: Michael Fudge
   ✉️ Email: mafudge@syr.edu
-  🕰️ Office Hours:  M/W 12:00pm - 1:30pm
-  
+  🕰️ Office Hours: Tues/Thur: 11:00am - 12:30pm Hinds 314
 
 ```
 

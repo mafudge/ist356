@@ -7,9 +7,9 @@ def hi_click():
     else:
         st.error(f"I can't say hello, if you don't tell me your name!", icon="💣")
 
-
 def clear_click():
     name = None 
+    
 
 # setup
 st.title("Streamlit Interaction: event-driven")
