@@ -171,9 +171,9 @@ Based on the assignments in this course and our specified learning outcomes, the
 | 7 | 10/6 | 10/8 | 10/9 |
 |   | Data Wrangling 3-6 | Exam 1 Review | Assignment 4 (A4) — Data Wrangling 1 |
 | 8 | 10/13 | 10/15 | 10/16 |
-|   | No Class: Fall Break | Exam 1 (E1) — 50 pts | Assignment 5 (A5) — Data Wrangling 2 |
+|   | No Class: Fall Break | Exam 1 (E1) — 50 pts |  |
 | 9 | 10/20 | 10/22 | 10/23 |
-|   | Web APIs 4-1 | Web APIs 4-2 |  |
+|   | Web APIs 4-1 | Web APIs 4-2 | Assignment 5 (A5) — Data Wrangling 2 |
 | 10 | 10/27 | 10/29 | 10/30 |
 |   | Web APIs 4-3 | Web APIs 4-4 |  |
 | 11 | 11/3 | 11/5 | 11/6 |
