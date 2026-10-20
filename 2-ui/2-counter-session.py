@@ -4,7 +4,7 @@ import streamlit as st
 
 # initialize
 if 'count' not in st.session_state:
-    st.session_state.count = 0
+    st.session_state.count = 0 # property
 
 # widget setup
 st.title('Counter Example: Session State')
@@ -20,4 +20,4 @@ elif incr_clicked:
     st.session_state.count = st.session_state.count + 1
     
 # display session state, after interations
-st.write(f'Button clicked {st.session_state.count} times')
+st.title(f'Button clicked {st.session_state.count} times')

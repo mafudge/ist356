@@ -11,7 +11,7 @@ texts = [
 cache = rq.clear_cache('sentiment.pkl')
 apikey = "ea044c96950db6cc0fab7ae1"
 headers = { 'x-api-key': apikey }
-url = "https://cent.ischool-iot.net/api/azure/sentiment"
+url = "https://portal.app.cent-su.org/api/azure/sentiment"
 for text in texts:
     if text in cache:
         results = cache[text]

@@ -48,7 +48,7 @@ if st.button("Spell Check"):
         prompt += text
 
         api_key = "ea044c96950db6cc0fab7ae1"
-        uri = "https://cent.ischool-iot.net/api/openai/generate"
+        uri = "https://portal.app.cent-su.org/api/openai/generate"
         data = { "query": prompt }
         response = requests.post(uri, data=data, headers={"x-api-key": api_key})
         response.raise_for_status()

@@ -5,7 +5,7 @@ import streamlit as st
 
 st.title("Funny Name Search")
 
-uri = "https://cent.ischool-iot.net/api/funnyname/search"
+uri = "https://portal.app.cent-su.org/api/funnyname/search"
 search = st.text_input("Search for a funny name")
 if st.button("Search"):
     response = requests.get(uri, params={"q": search})

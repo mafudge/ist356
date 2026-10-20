@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "age": 23,
+        "department": "accounting"
+    },
+    {
+        "firstName": "Mary",
+        "lastName": "Smith",
+        "age": 32,
+        "department": "accounting"
+    },
+    {
+        "firstName": "Sally",
+        "lastName": "Green",
+        "age": 27,
+        "department": "sales"
+    },
+    {
+        "firstName": "Jim",
+        "lastName": "Galley",
+        "age": 41,
+        "department": "sales"
+    },
+    {
+        "firstName": "Tom",
+        "lastName": "Brown",
+        "age": 28,
+        "department": "marketing"
+    }
+]

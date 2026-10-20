@@ -5,7 +5,8 @@ st.title('Streamlit Input Widgets!')
 st.markdown("## Text Inputs")
 txt = st.text_input('Enter your name:', value='John Doe')
 st.text(f"OUTPUT: {txt}, type: {type(txt)}")
-pw = st.text_input('Enter your password:', type="password")
+pw = st.text_input('Enter your password:', 
+                   type="password")
 st.text(f"OUTPUT: {pw}, type: {type(pw)}")
 txta = st.text_area('Leave a comment:', value='Type here...')
 st.text(f"OUTPUT: {txta}, type: {type(txta)}")
@@ -26,7 +27,11 @@ st.text(f"OUTPUT: {tm}, type: {type(tm)}")
 st.divider()
 
 st.markdown("## Number Widgtets")
-numi = st.number_input('Enter Hourly Wage:', value=7.25, max_value=20.0, min_value=5.25, step=0.25)
+numi = st.number_input('Enter Hourly Wage:', 
+                       value=7.25, 
+                       max_value=20.0, 
+                       min_value=5.25, 
+                       step=0.25)
 st.text(f"OUTPUT: {numi}, type: {type(numi)}")
 nums = st.slider('Pick a number between 1 and 20:', min_value=1, max_value=20, value=10, step=1)
 st.text(f"OUTPUT: {nums}, type: {type(nums)}")
@@ -45,7 +50,7 @@ st.divider()
 
 
 st.markdown("## 'Other' Widgets")
-feed = st.feedback('faces')
+feed = st.feedback("stars")
 st.text(f"OUTPUT: {feed}, type: {type(feed)}")
 color = st.color_picker('Pick a color:', value='#00f900')
 st.text(f"OUTPUT: {color}, type: {type(color)}")

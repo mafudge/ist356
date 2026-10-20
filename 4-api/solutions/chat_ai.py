@@ -11,7 +11,7 @@ prompts = [
 ]
 
 def generate_ai_response(context):
-    url = "https://cent.ischool-iot.net/api/openai/chat/completions"
+    url = "https://portal.app.cent-su.org/api/openai/chat/completions"
     response = requests.post(url, json=context, headers={"X-API-KEY": APIKEY})
     response.raise_for_status()
     results = response.json()

@@ -4,7 +4,7 @@ import requests
 apikey = "PLACEYOURAPIKEYHERE"
 
 def tldr_openai(text):
-    url = "https://cent.ischool-iot.net/api/openai/chat/completions"
+    url = "https://portal.app.cent-su.org/api/openai/chat/completions"
     headers = {
         "X-API-KEY" : apikey
     }

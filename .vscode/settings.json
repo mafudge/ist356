@@ -6,5 +6,6 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "notebook.lineNumbers": "on",
-    "editor.lineNumbers": "on"
+    "editor.lineNumbers": "on",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }

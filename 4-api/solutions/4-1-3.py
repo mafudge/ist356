@@ -7,14 +7,14 @@ location = st.text_input("Enter a location")
 if location:
     apikey = "ea044c96950db6cc0fab7ae1"
     headers = { "X-Api-Key": apikey }
-    geourl = "https://cent.ischool-iot.net/api/google/geocode"
+    geourl = "https://portal.app.cent-su.org/api/google/geocode"
     params = { "location": location }
     response = requests.get(geourl, params=params, headers=headers)
     response.raise_for_status()
     geodata = response.json()
     
     lat, lon = geodata['results'][0]['geometry']['location']["lat"], geodata['results'][0]['geometry']['location']["lng"]
-    weatherurl = "https://cent.ischool-iot.net/api/weather/current"
+    weatherurl = "https://portal.app.cent-su.org/api/weather/current"
     params = { "lat": lat, "lon": lon, "units": "imperial" }
     response = requests.get(weatherurl, params=params, headers=headers)
     response.raise_for_status()

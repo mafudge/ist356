@@ -20,7 +20,7 @@ if file is not None:
         prompt += "Answer the following question:\n"
         prompt += question
 
-        url = "https://cent.ischool-iot.net/api/openai/generate"
+        url = "https://portal.app.cent-su.org/api/openai/generate"
         response = requests.post(url, data={"query": prompt}, headers={"x-api-key" : APIKEY})
         response.raise_for_status()
         results = response.json()
