@@ -7,7 +7,7 @@ def stock_scraper(playwright: Playwright, stock, date) -> dict:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto(f"https://finance.yahoo.com/quote/{stock}/")
+    page.goto(f"https://mafudge.github.io/scraping-examples/yahoo/quote/{stock}/")
     sleep(1)
 
     price = page.query_selector("fin-streamer.livePrice").get_attribute("data-value")

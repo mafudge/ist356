@@ -10,7 +10,7 @@ def run(playwright: Playwright) -> None:
     context = browser.new_context()
     page = context.new_page()
     page.goto("about:blank")
-    page.goto("http://coursecatalog.syr.edu/")
+    page.goto("https://mafudge.github.io/scraping-examples/coursecatalog/")
     page.get_by_label("Search Keyword Field").click()
     page.get_by_label("Search Keyword Field, required").fill(course)
     page.get_by_label("Search Keyword Field, required").press("Enter")

@@ -1,11 +1,12 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
 
+url = "https://mafudge.github.io/scraping-examples/imdb/chart/top/"
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("https://www.imdb.com/chart/top/")
+    page.goto(url)
 
     # Let's scrape the heading off the page!
     heading = page.query_selector("h1")

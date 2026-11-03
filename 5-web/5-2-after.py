@@ -5,7 +5,7 @@ def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("https://ist256.com/fall2023/syllabus/")
+    page.goto("https://mafudge.github.io/scraping-examples/ist256/fall2023/syllabus/")
     
     # select the title by selector
     outcomes = page.query_selector("h3#learning-outcomes")

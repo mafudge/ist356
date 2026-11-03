@@ -17,7 +17,7 @@ prompts = [
 
 def generate_ai_response(context):
     url = "https://portal.app.cent-su.org/api/ollama/chat/completions"
-    params = { "model": "llama3.2:latest", "stream": False, "temperature": 0.7, "max_tokens": 12000 }
+    params = { "model": "llama3.2:latest", "stream": False, "temperature": 2.0, "max_tokens": 12000 }
     response = requests.post(url, json=context, headers={"X-API-KEY": CENT_API_KEY}, params=params)
     response.raise_for_status()
     results = response.json()

@@ -13,3 +13,4 @@ mapclassify
 folium
 streamlit-folium
 dotenv
+lxml

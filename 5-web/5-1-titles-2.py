@@ -5,7 +5,7 @@ def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("https://www.imdb.com/chart/top/")
+    page.goto("https://mafudge.github.io/scraping-examples/imdb/chart/top/")
 
     # outer element that contains the list of 250 top movies
     top_250_list = page.query_selector("ul.ipc-metadata-list")

@@ -5,7 +5,7 @@ def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto("https://www.imdb.com/chart/top/")
+    page.goto("https://mafudge.github.io/scraping-examples/imdb/chart/top/")
     
     # select the title by selector
     elements_on_page = page.query_selector_all("h3.ipc-title__text")

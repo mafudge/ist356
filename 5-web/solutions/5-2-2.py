@@ -1,5 +1,6 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
 import pandas as pd
+from io import StringIO
 from time import sleep
 import sys
 
@@ -7,12 +8,12 @@ def run(playwright: Playwright, year) -> str:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto(f"https://cuse.com/sports/football/schedule/{year}")
+    page.goto(f"https://mafudge.github.io/scraping-examples/cuse/sports/football/schedule/{year}")
     page.wait_for_load_state("load")
     sleep(1)
     page.get_by_role("tab", name="Table View not selected").click()
     sleep(1)
-    dfs = pd.read_html(page.content())
+    dfs = pd.read_html(StringIO(page.content()))
     
     
     # ---------------------

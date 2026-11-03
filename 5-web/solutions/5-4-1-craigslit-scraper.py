@@ -6,7 +6,7 @@ def scrape_craigslist(playwright: Playwright, search:str) -> list[dict]:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
-    page.goto(f"https://syracuse.craigslist.org/search/sss?query={search}#search=1~gallery~0~0")
+    page.goto(f"https://mafudge.github.io/scraping-examples/craigslist/search/sss/?query={search}#search=1~gallery~0~0")
     sleep(2)
     page.locator(".cl-search-view-mode > span").click()
     page.get_by_role("button", name=" list").click()
